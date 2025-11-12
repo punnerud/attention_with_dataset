@@ -2,6 +2,8 @@
 
 A web-based annotation tool and training pipeline for weakly-supervised object detection using image-level labels and count annotations.
 
+**[Discussion on Hacker News](https://news.ycombinator.com/item?id=45905129)**
+
 ## 📸 Examples
 
 ### Attention Map Visualization
