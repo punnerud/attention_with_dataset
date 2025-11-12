@@ -281,11 +281,18 @@ def generate_sam_segmentation(image_path, model, image_name):
 
         # Create visualization - only for annotated classes
         num_classes = len(active_classes)
-        ncols = 3
+        ncols = min(3, num_classes)  # Don't create more columns than classes
         nrows = (num_classes + ncols - 1) // ncols
 
         fig, axes = plt.subplots(nrows, ncols, figsize=(12, 4 * nrows))
-        axes = axes.flatten() if num_classes > 1 else [axes]
+
+        # Handle different subplot configurations
+        if num_classes == 1:
+            axes = [axes]  # Single subplot
+        elif nrows == 1 or ncols == 1:
+            axes = axes.flatten()  # Single row or column
+        else:
+            axes = axes.flatten()  # Grid
 
         ax_idx = 0
         for i, class_name in enumerate(model_classes):
