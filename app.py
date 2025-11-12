@@ -445,27 +445,37 @@ def get_sam_segmentation(image_name):
     """Get SAM-based segmentation using attention + known classes"""
     global loaded_model, sam_predictor
 
+    print(f"\n🔍 SAM API called for: {image_name}")
+
     if loaded_model is None:
+        print("   Loading attention model...")
         loaded_model = load_model()
 
     if sam_predictor is None:
+        print("   Loading SAM model...")
         sam_predictor = load_sam_model()
 
     if loaded_model is None:
+        print("   ❌ Attention model not available")
         return jsonify({'error': 'Model not available'}), 404
 
     if sam_predictor is None:
-        return jsonify({'error': 'SAM not available'}), 404
+        print("   ❌ SAM not available")
+        return jsonify({'error': 'SAM not available. Install: pip install segment-anything'}), 404
 
     image_path = INPUT_DIR / image_name
     if not image_path.exists():
+        print(f"   ❌ Image not found: {image_path}")
         return jsonify({'error': 'Image not found'}), 404
 
+    print("   Generating SAM segmentation...")
     sam_img = generate_sam_segmentation(image_path, loaded_model, image_name)
 
     if sam_img is None:
+        print("   ❌ SAM generation returned None")
         return jsonify({'error': 'Please annotate this image first (mark classes with count > 0).'}), 400
 
+    print("   ✅ SAM segmentation generated successfully")
     return jsonify({'sam_image': sam_img})
 
 
