@@ -1,0 +1,4336 @@
+{
+  "classes": [
+    "blank",
+    "bryter",
+    "stikkontakt",
+    "elsparkesykkel",
+    "sluk",
+    "kumlokk"
+  ],
+  "images": {
+    "IMG_7039.jpg": {
+      "path": "input/IMG_7039.jpg",
+      "classes": [
+        "blank"
+      ],
+      "primary_class": "blank",
+      "counts": {
+        "blank": 1,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 0,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7043.jpg": {
+      "path": "input/IMG_7043.jpg",
+      "classes": [
+        "stikkontakt"
+      ],
+      "primary_class": "stikkontakt",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 2,
+        "sluk": 0,
+        "kumlokk": 0,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7044.jpg": {
+      "path": "input/IMG_7044.jpg",
+      "classes": [
+        "stikkontakt"
+      ],
+      "primary_class": "stikkontakt",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 2,
+        "sluk": 0,
+        "kumlokk": 0,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7045.jpg": {
+      "path": "input/IMG_7045.jpg",
+      "classes": [
+        "stikkontakt"
+      ],
+      "primary_class": "stikkontakt",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 2,
+        "sluk": 0,
+        "kumlokk": 0,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7046.jpg": {
+      "path": "input/IMG_7046.jpg",
+      "classes": [
+        "stikkontakt"
+      ],
+      "primary_class": "stikkontakt",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 2,
+        "sluk": 0,
+        "kumlokk": 0,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7047.jpg": {
+      "path": "input/IMG_7047.jpg",
+      "classes": [
+        "kumlokk"
+      ],
+      "primary_class": "kumlokk",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 1,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7048.jpg": {
+      "path": "input/IMG_7048.jpg",
+      "classes": [
+        "kumlokk"
+      ],
+      "primary_class": "kumlokk",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 1,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7049.jpg": {
+      "path": "input/IMG_7049.jpg",
+      "classes": [
+        "kumlokk"
+      ],
+      "primary_class": "kumlokk",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 1,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7050.jpg": {
+      "path": "input/IMG_7050.jpg",
+      "classes": [
+        "kumlokk"
+      ],
+      "primary_class": "kumlokk",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 1,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7051.jpg": {
+      "path": "input/IMG_7051.jpg",
+      "classes": [
+        "sluk"
+      ],
+      "primary_class": "sluk",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 1,
+        "kumlokk": 0,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7040.jpg": {
+      "path": "input/IMG_7040.jpg",
+      "classes": [
+        "blank"
+      ],
+      "primary_class": "blank",
+      "counts": {
+        "blank": 1,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 0,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7041.jpg": {
+      "path": "input/IMG_7041.jpg",
+      "classes": [
+        "blank"
+      ],
+      "primary_class": "blank",
+      "counts": {
+        "blank": 1,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 0,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7042.jpg": {
+      "path": "input/IMG_7042.jpg",
+      "classes": [
+        "blank"
+      ],
+      "primary_class": "blank",
+      "counts": {
+        "blank": 1,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 0,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7052.jpg": {
+      "path": "input/IMG_7052.jpg",
+      "classes": [
+        "sluk"
+      ],
+      "primary_class": "sluk",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 1,
+        "kumlokk": 0,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7053.jpg": {
+      "path": "input/IMG_7053.jpg",
+      "classes": [
+        "sluk"
+      ],
+      "primary_class": "sluk",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 1,
+        "kumlokk": 0,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7054.jpg": {
+      "path": "input/IMG_7054.jpg",
+      "classes": [
+        "stikkontakt"
+      ],
+      "primary_class": "stikkontakt",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 1,
+        "sluk": 0,
+        "kumlokk": 0,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7055.jpg": {
+      "path": "input/IMG_7055.jpg",
+      "classes": [
+        "stikkontakt"
+      ],
+      "primary_class": "stikkontakt",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 1,
+        "sluk": 0,
+        "kumlokk": 0,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7056.jpg": {
+      "path": "input/IMG_7056.jpg",
+      "classes": [
+        "stikkontakt",
+        "sluk"
+      ],
+      "primary_class": "stikkontakt",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 1,
+        "sluk": 1,
+        "kumlokk": 0,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7057.jpg": {
+      "path": "input/IMG_7057.jpg",
+      "classes": [
+        "stikkontakt",
+        "sluk"
+      ],
+      "primary_class": "stikkontakt",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 1,
+        "sluk": 1,
+        "kumlokk": 0,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7058.jpg": {
+      "path": "input/IMG_7058.jpg",
+      "classes": [
+        "stikkontakt",
+        "sluk"
+      ],
+      "primary_class": "stikkontakt",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 1,
+        "sluk": 1,
+        "kumlokk": 0,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7059.jpg": {
+      "path": "input/IMG_7059.jpg",
+      "classes": [
+        "stikkontakt"
+      ],
+      "primary_class": "stikkontakt",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 1,
+        "sluk": 0,
+        "kumlokk": 0,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7060.jpg": {
+      "path": "input/IMG_7060.jpg",
+      "classes": [
+        "stikkontakt"
+      ],
+      "primary_class": "stikkontakt",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 1,
+        "sluk": 0,
+        "kumlokk": 0,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7061.jpg": {
+      "path": "input/IMG_7061.jpg",
+      "classes": [
+        "stikkontakt"
+      ],
+      "primary_class": "stikkontakt",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 1,
+        "sluk": 0,
+        "kumlokk": 0,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7062.jpg": {
+      "path": "input/IMG_7062.jpg",
+      "classes": [
+        "kumlokk"
+      ],
+      "primary_class": "kumlokk",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 2,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7063.jpg": {
+      "path": "input/IMG_7063.jpg",
+      "classes": [
+        "kumlokk"
+      ],
+      "primary_class": "kumlokk",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 1,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7064.jpg": {
+      "path": "input/IMG_7064.jpg",
+      "classes": [
+        "kumlokk"
+      ],
+      "primary_class": "kumlokk",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 1,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7065.jpg": {
+      "path": "input/IMG_7065.jpg",
+      "classes": [
+        "kumlokk"
+      ],
+      "primary_class": "kumlokk",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 1,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7066 2.jpg": {
+      "path": "input/IMG_7066 2.jpg",
+      "classes": [
+        "kumlokk"
+      ],
+      "primary_class": "kumlokk",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 1,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7067.jpg": {
+      "path": "input/IMG_7067.jpg",
+      "classes": [
+        "kumlokk"
+      ],
+      "primary_class": "kumlokk",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 1,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7068.jpg": {
+      "path": "input/IMG_7068.jpg",
+      "classes": [
+        "kumlokk"
+      ],
+      "primary_class": "kumlokk",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 1,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7069.jpg": {
+      "path": "input/IMG_7069.jpg",
+      "classes": [
+        "kumlokk"
+      ],
+      "primary_class": "kumlokk",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 1,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7070.jpg": {
+      "path": "input/IMG_7070.jpg",
+      "classes": [
+        "sluk",
+        "kumlokk"
+      ],
+      "primary_class": "sluk",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 1,
+        "kumlokk": 1,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7071.jpg": {
+      "path": "input/IMG_7071.jpg",
+      "classes": [
+        "sluk",
+        "kumlokk"
+      ],
+      "primary_class": "sluk",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 1,
+        "kumlokk": 1,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7072.jpg": {
+      "path": "input/IMG_7072.jpg",
+      "classes": [
+        "sluk",
+        "kumlokk"
+      ],
+      "primary_class": "sluk",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 1,
+        "kumlokk": 1,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7073.jpg": {
+      "path": "input/IMG_7073.jpg",
+      "classes": [
+        "sluk",
+        "kumlokk"
+      ],
+      "primary_class": "sluk",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 1,
+        "kumlokk": 1,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7074.jpg": {
+      "path": "input/IMG_7074.jpg",
+      "classes": [
+        "sluk",
+        "kumlokk"
+      ],
+      "primary_class": "sluk",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 1,
+        "kumlokk": 1,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7075.jpg": {
+      "path": "input/IMG_7075.jpg",
+      "classes": [
+        "kumlokk"
+      ],
+      "primary_class": "kumlokk",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 1,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7076.jpg": {
+      "path": "input/IMG_7076.jpg",
+      "classes": [
+        "kumlokk"
+      ],
+      "primary_class": "kumlokk",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 1,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7077.jpg": {
+      "path": "input/IMG_7077.jpg",
+      "classes": [
+        "sluk"
+      ],
+      "primary_class": "sluk",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 1,
+        "kumlokk": 0,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7078.jpg": {
+      "path": "input/IMG_7078.jpg",
+      "classes": [
+        "sluk"
+      ],
+      "primary_class": "sluk",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 1,
+        "kumlokk": 0,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7079.jpg": {
+      "path": "input/IMG_7079.jpg",
+      "classes": [
+        "sluk"
+      ],
+      "primary_class": "sluk",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 1,
+        "kumlokk": 0,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7080.jpg": {
+      "path": "input/IMG_7080.jpg",
+      "classes": [
+        "sluk"
+      ],
+      "primary_class": "sluk",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 1,
+        "kumlokk": 0,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7081.jpg": {
+      "path": "input/IMG_7081.jpg",
+      "classes": [
+        "sluk"
+      ],
+      "primary_class": "sluk",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 1,
+        "kumlokk": 0,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7082.jpg": {
+      "path": "input/IMG_7082.jpg",
+      "classes": [
+        "sluk"
+      ],
+      "primary_class": "sluk",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 1,
+        "kumlokk": 0,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7083.jpg": {
+      "path": "input/IMG_7083.jpg",
+      "classes": [
+        "elsparkesykkel"
+      ],
+      "primary_class": "elsparkesykkel",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 0,
+        "elsparkesykkel": 1
+      }
+    },
+    "IMG_7084.jpg": {
+      "path": "input/IMG_7084.jpg",
+      "classes": [
+        "elsparkesykkel"
+      ],
+      "primary_class": "elsparkesykkel",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 0,
+        "elsparkesykkel": 1
+      }
+    },
+    "IMG_7085.jpg": {
+      "path": "input/IMG_7085.jpg",
+      "classes": [
+        "elsparkesykkel"
+      ],
+      "primary_class": "elsparkesykkel",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 0,
+        "elsparkesykkel": 1
+      }
+    },
+    "IMG_7086.jpg": {
+      "path": "input/IMG_7086.jpg",
+      "classes": [
+        "elsparkesykkel"
+      ],
+      "primary_class": "elsparkesykkel",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 0,
+        "elsparkesykkel": 1
+      }
+    },
+    "IMG_7087.jpg": {
+      "path": "input/IMG_7087.jpg",
+      "classes": [
+        "elsparkesykkel"
+      ],
+      "primary_class": "elsparkesykkel",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 0,
+        "elsparkesykkel": 2
+      }
+    },
+    "IMG_7088.jpg": {
+      "path": "input/IMG_7088.jpg",
+      "classes": [
+        "elsparkesykkel"
+      ],
+      "primary_class": "elsparkesykkel",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 0,
+        "elsparkesykkel": 2
+      }
+    },
+    "IMG_7089.jpg": {
+      "path": "input/IMG_7089.jpg",
+      "classes": [
+        "elsparkesykkel"
+      ],
+      "primary_class": "elsparkesykkel",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 0,
+        "elsparkesykkel": 2
+      }
+    },
+    "IMG_7090.jpg": {
+      "path": "input/IMG_7090.jpg",
+      "classes": [
+        "elsparkesykkel"
+      ],
+      "primary_class": "elsparkesykkel",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 0,
+        "elsparkesykkel": 2
+      }
+    },
+    "IMG_7091.jpg": {
+      "path": "input/IMG_7091.jpg",
+      "classes": [
+        "elsparkesykkel"
+      ],
+      "primary_class": "elsparkesykkel",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 0,
+        "elsparkesykkel": 2
+      }
+    },
+    "IMG_7092.jpg": {
+      "path": "input/IMG_7092.jpg",
+      "classes": [
+        "sluk"
+      ],
+      "primary_class": "sluk",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 2,
+        "kumlokk": 0,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7093.jpg": {
+      "path": "input/IMG_7093.jpg",
+      "classes": [
+        "sluk"
+      ],
+      "primary_class": "sluk",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 1,
+        "kumlokk": 0,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7094.jpg": {
+      "path": "input/IMG_7094.jpg",
+      "classes": [
+        "sluk"
+      ],
+      "primary_class": "sluk",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 1,
+        "kumlokk": 0,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7095.jpg": {
+      "path": "input/IMG_7095.jpg",
+      "classes": [
+        "sluk"
+      ],
+      "primary_class": "sluk",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 1,
+        "kumlokk": 0,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7096.jpg": {
+      "path": "input/IMG_7096.jpg",
+      "classes": [
+        "sluk"
+      ],
+      "primary_class": "sluk",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 1,
+        "kumlokk": 0,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7097.jpg": {
+      "path": "input/IMG_7097.jpg",
+      "classes": [
+        "sluk"
+      ],
+      "primary_class": "sluk",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 1,
+        "kumlokk": 0,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7098.jpg": {
+      "path": "input/IMG_7098.jpg",
+      "classes": [
+        "sluk"
+      ],
+      "primary_class": "sluk",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 1,
+        "kumlokk": 0,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7099.jpg": {
+      "path": "input/IMG_7099.jpg",
+      "classes": [
+        "sluk"
+      ],
+      "primary_class": "sluk",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 1,
+        "kumlokk": 0,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7100.jpg": {
+      "path": "input/IMG_7100.jpg",
+      "classes": [
+        "sluk"
+      ],
+      "primary_class": "sluk",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 4,
+        "kumlokk": 0,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7101.jpg": {
+      "path": "input/IMG_7101.jpg",
+      "classes": [
+        "sluk"
+      ],
+      "primary_class": "sluk",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 3,
+        "kumlokk": 0,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7102.jpg": {
+      "path": "input/IMG_7102.jpg",
+      "classes": [
+        "sluk"
+      ],
+      "primary_class": "sluk",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 4,
+        "kumlokk": 0,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7103.jpg": {
+      "path": "input/IMG_7103.jpg",
+      "classes": [
+        "sluk"
+      ],
+      "primary_class": "sluk",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 4,
+        "kumlokk": 0,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7104.jpg": {
+      "path": "input/IMG_7104.jpg",
+      "classes": [
+        "sluk"
+      ],
+      "primary_class": "sluk",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 4,
+        "kumlokk": 0,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7105.jpg": {
+      "path": "input/IMG_7105.jpg",
+      "classes": [
+        "sluk"
+      ],
+      "primary_class": "sluk",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 3,
+        "kumlokk": 0,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7106.jpg": {
+      "path": "input/IMG_7106.jpg",
+      "classes": [
+        "elsparkesykkel"
+      ],
+      "primary_class": "elsparkesykkel",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 0,
+        "elsparkesykkel": 2
+      }
+    },
+    "IMG_7107.jpg": {
+      "path": "input/IMG_7107.jpg",
+      "classes": [
+        "elsparkesykkel"
+      ],
+      "primary_class": "elsparkesykkel",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 0,
+        "elsparkesykkel": 2
+      }
+    },
+    "IMG_7108.jpg": {
+      "path": "input/IMG_7108.jpg",
+      "classes": [
+        "elsparkesykkel"
+      ],
+      "primary_class": "elsparkesykkel",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 0,
+        "elsparkesykkel": 2
+      }
+    },
+    "IMG_7109.jpg": {
+      "path": "input/IMG_7109.jpg",
+      "classes": [
+        "elsparkesykkel"
+      ],
+      "primary_class": "elsparkesykkel",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 0,
+        "elsparkesykkel": 1
+      }
+    },
+    "IMG_7110.jpg": {
+      "path": "input/IMG_7110.jpg",
+      "classes": [
+        "elsparkesykkel"
+      ],
+      "primary_class": "elsparkesykkel",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 0,
+        "elsparkesykkel": 1
+      }
+    },
+    "IMG_7111.jpg": {
+      "path": "input/IMG_7111.jpg",
+      "classes": [
+        "elsparkesykkel"
+      ],
+      "primary_class": "elsparkesykkel",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 0,
+        "elsparkesykkel": 3
+      }
+    },
+    "IMG_7112.jpg": {
+      "path": "input/IMG_7112.jpg",
+      "classes": [
+        "elsparkesykkel"
+      ],
+      "primary_class": "elsparkesykkel",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 0,
+        "elsparkesykkel": 2
+      }
+    },
+    "IMG_7113.jpg": {
+      "path": "input/IMG_7113.jpg",
+      "classes": [
+        "elsparkesykkel"
+      ],
+      "primary_class": "elsparkesykkel",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 0,
+        "elsparkesykkel": 1
+      }
+    },
+    "IMG_7114.jpg": {
+      "path": "input/IMG_7114.jpg",
+      "classes": [
+        "elsparkesykkel"
+      ],
+      "primary_class": "elsparkesykkel",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 0,
+        "elsparkesykkel": 1
+      }
+    },
+    "IMG_7115.jpg": {
+      "path": "input/IMG_7115.jpg",
+      "classes": [
+        "elsparkesykkel"
+      ],
+      "primary_class": "elsparkesykkel",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 0,
+        "elsparkesykkel": 2
+      }
+    },
+    "IMG_7116.jpg": {
+      "path": "input/IMG_7116.jpg",
+      "classes": [
+        "elsparkesykkel"
+      ],
+      "primary_class": "elsparkesykkel",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 0,
+        "elsparkesykkel": 2
+      }
+    },
+    "IMG_7117.jpg": {
+      "path": "input/IMG_7117.jpg",
+      "classes": [
+        "elsparkesykkel"
+      ],
+      "primary_class": "elsparkesykkel",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 0,
+        "elsparkesykkel": 2
+      }
+    },
+    "IMG_7118.jpg": {
+      "path": "input/IMG_7118.jpg",
+      "classes": [
+        "elsparkesykkel"
+      ],
+      "primary_class": "elsparkesykkel",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 0,
+        "elsparkesykkel": 2
+      }
+    },
+    "IMG_7119.jpg": {
+      "path": "input/IMG_7119.jpg",
+      "classes": [
+        "elsparkesykkel"
+      ],
+      "primary_class": "elsparkesykkel",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 0,
+        "elsparkesykkel": 1
+      }
+    },
+    "IMG_7120.jpg": {
+      "path": "input/IMG_7120.jpg",
+      "classes": [
+        "elsparkesykkel"
+      ],
+      "primary_class": "elsparkesykkel",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 0,
+        "elsparkesykkel": 1
+      }
+    },
+    "IMG_7121.jpg": {
+      "path": "input/IMG_7121.jpg",
+      "classes": [
+        "elsparkesykkel"
+      ],
+      "primary_class": "elsparkesykkel",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 0,
+        "elsparkesykkel": 1
+      }
+    },
+    "IMG_7122.jpg": {
+      "path": "input/IMG_7122.jpg",
+      "classes": [
+        "kumlokk"
+      ],
+      "primary_class": "kumlokk",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 1,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7123.jpg": {
+      "path": "input/IMG_7123.jpg",
+      "classes": [
+        "kumlokk"
+      ],
+      "primary_class": "kumlokk",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 1,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7124.jpg": {
+      "path": "input/IMG_7124.jpg",
+      "classes": [],
+      "primary_class": null,
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 0,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7125.jpg": {
+      "path": "input/IMG_7125.jpg",
+      "classes": [
+        "kumlokk"
+      ],
+      "primary_class": "kumlokk",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 1,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7126.jpg": {
+      "path": "input/IMG_7126.jpg",
+      "classes": [
+        "kumlokk"
+      ],
+      "primary_class": "kumlokk",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 1,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7127.jpg": {
+      "path": "input/IMG_7127.jpg",
+      "classes": [
+        "kumlokk"
+      ],
+      "primary_class": "kumlokk",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 1,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7128.jpg": {
+      "path": "input/IMG_7128.jpg",
+      "classes": [
+        "kumlokk"
+      ],
+      "primary_class": "kumlokk",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 2,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7129.jpg": {
+      "path": "input/IMG_7129.jpg",
+      "classes": [
+        "kumlokk"
+      ],
+      "primary_class": "kumlokk",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 2,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7130.jpg": {
+      "path": "input/IMG_7130.jpg",
+      "classes": [
+        "kumlokk"
+      ],
+      "primary_class": "kumlokk",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 2,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7131.jpg": {
+      "path": "input/IMG_7131.jpg",
+      "classes": [
+        "kumlokk"
+      ],
+      "primary_class": "kumlokk",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 2,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7132.jpg": {
+      "path": "input/IMG_7132.jpg",
+      "classes": [
+        "kumlokk"
+      ],
+      "primary_class": "kumlokk",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 2,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7133.jpg": {
+      "path": "input/IMG_7133.jpg",
+      "classes": [
+        "elsparkesykkel"
+      ],
+      "primary_class": "elsparkesykkel",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 0,
+        "elsparkesykkel": 1
+      }
+    },
+    "IMG_7134.jpg": {
+      "path": "input/IMG_7134.jpg",
+      "classes": [
+        "elsparkesykkel"
+      ],
+      "primary_class": "elsparkesykkel",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 0,
+        "elsparkesykkel": 2
+      }
+    },
+    "IMG_7135.jpg": {
+      "path": "input/IMG_7135.jpg",
+      "classes": [
+        "kumlokk"
+      ],
+      "primary_class": "kumlokk",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 1,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7136.jpg": {
+      "path": "input/IMG_7136.jpg",
+      "classes": [
+        "kumlokk"
+      ],
+      "primary_class": "kumlokk",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 1,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7137.jpg": {
+      "path": "input/IMG_7137.jpg",
+      "classes": [
+        "kumlokk"
+      ],
+      "primary_class": "kumlokk",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 1,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7138.jpg": {
+      "path": "input/IMG_7138.jpg",
+      "classes": [
+        "sluk"
+      ],
+      "primary_class": "sluk",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 1,
+        "kumlokk": 0,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7139.jpg": {
+      "path": "input/IMG_7139.jpg",
+      "classes": [
+        "sluk"
+      ],
+      "primary_class": "sluk",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 1,
+        "kumlokk": 0,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7140.jpg": {
+      "path": "input/IMG_7140.jpg",
+      "classes": [
+        "sluk"
+      ],
+      "primary_class": "sluk",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 1,
+        "kumlokk": 0,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7141.jpg": {
+      "path": "input/IMG_7141.jpg",
+      "classes": [
+        "sluk"
+      ],
+      "primary_class": "sluk",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 1,
+        "kumlokk": 0,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7142.jpg": {
+      "path": "input/IMG_7142.jpg",
+      "classes": [
+        "kumlokk"
+      ],
+      "primary_class": "kumlokk",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 1,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7143.jpg": {
+      "path": "input/IMG_7143.jpg",
+      "classes": [
+        "kumlokk"
+      ],
+      "primary_class": "kumlokk",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 1,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7144.jpg": {
+      "path": "input/IMG_7144.jpg",
+      "classes": [
+        "kumlokk"
+      ],
+      "primary_class": "kumlokk",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 1,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7145.jpg": {
+      "path": "input/IMG_7145.jpg",
+      "classes": [
+        "elsparkesykkel",
+        "kumlokk"
+      ],
+      "primary_class": "elsparkesykkel",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 1,
+        "elsparkesykkel": 1
+      }
+    },
+    "IMG_7146.jpg": {
+      "path": "input/IMG_7146.jpg",
+      "classes": [
+        "elsparkesykkel",
+        "kumlokk"
+      ],
+      "primary_class": "elsparkesykkel",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 1,
+        "elsparkesykkel": 1
+      }
+    },
+    "IMG_7147.jpg": {
+      "path": "input/IMG_7147.jpg",
+      "classes": [
+        "sluk",
+        "kumlokk"
+      ],
+      "primary_class": "sluk",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 1,
+        "kumlokk": 1,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7148.jpg": {
+      "path": "input/IMG_7148.jpg",
+      "classes": [
+        "sluk",
+        "kumlokk"
+      ],
+      "primary_class": "sluk",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 1,
+        "kumlokk": 1,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7149.jpg": {
+      "path": "input/IMG_7149.jpg",
+      "classes": [
+        "sluk",
+        "kumlokk"
+      ],
+      "primary_class": "sluk",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 1,
+        "kumlokk": 1,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7150.jpg": {
+      "path": "input/IMG_7150.jpg",
+      "classes": [
+        "sluk",
+        "kumlokk"
+      ],
+      "primary_class": "sluk",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 1,
+        "kumlokk": 1,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7151.jpg": {
+      "path": "input/IMG_7151.jpg",
+      "classes": [
+        "kumlokk"
+      ],
+      "primary_class": "kumlokk",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 1,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7152.jpg": {
+      "path": "input/IMG_7152.jpg",
+      "classes": [
+        "kumlokk"
+      ],
+      "primary_class": "kumlokk",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 1,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7153.jpg": {
+      "path": "input/IMG_7153.jpg",
+      "classes": [
+        "kumlokk"
+      ],
+      "primary_class": "kumlokk",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 2,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7154.jpg": {
+      "path": "input/IMG_7154.jpg",
+      "classes": [
+        "kumlokk"
+      ],
+      "primary_class": "kumlokk",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 1,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7155.jpg": {
+      "path": "input/IMG_7155.jpg",
+      "classes": [
+        "kumlokk"
+      ],
+      "primary_class": "kumlokk",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 1,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7156.jpg": {
+      "path": "input/IMG_7156.jpg",
+      "classes": [
+        "kumlokk"
+      ],
+      "primary_class": "kumlokk",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 3,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7157.jpg": {
+      "path": "input/IMG_7157.jpg",
+      "classes": [
+        "kumlokk"
+      ],
+      "primary_class": "kumlokk",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 3,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7158.jpg": {
+      "path": "input/IMG_7158.jpg",
+      "classes": [
+        "kumlokk"
+      ],
+      "primary_class": "kumlokk",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 3,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7159.jpg": {
+      "path": "input/IMG_7159.jpg",
+      "classes": [
+        "kumlokk"
+      ],
+      "primary_class": "kumlokk",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 2,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7160.jpg": {
+      "path": "input/IMG_7160.jpg",
+      "classes": [
+        "kumlokk"
+      ],
+      "primary_class": "kumlokk",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 2,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7161.jpg": {
+      "path": "input/IMG_7161.jpg",
+      "classes": [
+        "kumlokk"
+      ],
+      "primary_class": "kumlokk",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 2,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7162.jpg": {
+      "path": "input/IMG_7162.jpg",
+      "classes": [
+        "kumlokk"
+      ],
+      "primary_class": "kumlokk",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 2,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7163.jpg": {
+      "path": "input/IMG_7163.jpg",
+      "classes": [
+        "kumlokk"
+      ],
+      "primary_class": "kumlokk",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 2,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7164.jpg": {
+      "path": "input/IMG_7164.jpg",
+      "classes": [
+        "kumlokk"
+      ],
+      "primary_class": "kumlokk",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 2,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7165.jpg": {
+      "path": "input/IMG_7165.jpg",
+      "classes": [
+        "kumlokk"
+      ],
+      "primary_class": "kumlokk",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 2,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7166.jpg": {
+      "path": "input/IMG_7166.jpg",
+      "classes": [
+        "kumlokk"
+      ],
+      "primary_class": "kumlokk",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 2,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7167.jpg": {
+      "path": "input/IMG_7167.jpg",
+      "classes": [
+        "kumlokk"
+      ],
+      "primary_class": "kumlokk",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 2,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7168.jpg": {
+      "path": "input/IMG_7168.jpg",
+      "classes": [
+        "kumlokk"
+      ],
+      "primary_class": "kumlokk",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 2,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7169.jpg": {
+      "path": "input/IMG_7169.jpg",
+      "classes": [
+        "kumlokk"
+      ],
+      "primary_class": "kumlokk",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 2,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7170.jpg": {
+      "path": "input/IMG_7170.jpg",
+      "classes": [
+        "kumlokk"
+      ],
+      "primary_class": "kumlokk",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 2,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7171.jpg": {
+      "path": "input/IMG_7171.jpg",
+      "classes": [
+        "kumlokk"
+      ],
+      "primary_class": "kumlokk",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 2,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7172.jpg": {
+      "path": "input/IMG_7172.jpg",
+      "classes": [
+        "kumlokk"
+      ],
+      "primary_class": "kumlokk",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 1,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7173.jpg": {
+      "path": "input/IMG_7173.jpg",
+      "classes": [
+        "kumlokk"
+      ],
+      "primary_class": "kumlokk",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 1,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7174.jpg": {
+      "path": "input/IMG_7174.jpg",
+      "classes": [
+        "kumlokk"
+      ],
+      "primary_class": "kumlokk",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 1,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7175.jpg": {
+      "path": "input/IMG_7175.jpg",
+      "classes": [
+        "kumlokk"
+      ],
+      "primary_class": "kumlokk",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 3,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7176.jpg": {
+      "path": "input/IMG_7176.jpg",
+      "classes": [
+        "kumlokk"
+      ],
+      "primary_class": "kumlokk",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 2,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7177.jpg": {
+      "path": "input/IMG_7177.jpg",
+      "classes": [
+        "kumlokk"
+      ],
+      "primary_class": "kumlokk",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 2,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7178.jpg": {
+      "path": "input/IMG_7178.jpg",
+      "classes": [
+        "kumlokk"
+      ],
+      "primary_class": "kumlokk",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 2,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7179.jpg": {
+      "path": "input/IMG_7179.jpg",
+      "classes": [
+        "kumlokk"
+      ],
+      "primary_class": "kumlokk",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 2,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7180.jpg": {
+      "path": "input/IMG_7180.jpg",
+      "classes": [
+        "kumlokk"
+      ],
+      "primary_class": "kumlokk",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 2,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7181.jpg": {
+      "path": "input/IMG_7181.jpg",
+      "classes": [
+        "kumlokk"
+      ],
+      "primary_class": "kumlokk",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 1,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7182.jpg": {
+      "path": "input/IMG_7182.jpg",
+      "classes": [
+        "sluk"
+      ],
+      "primary_class": "sluk",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 1,
+        "kumlokk": 0,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7183.jpg": {
+      "path": "input/IMG_7183.jpg",
+      "classes": [
+        "sluk"
+      ],
+      "primary_class": "sluk",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 1,
+        "kumlokk": 0,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7184.jpg": {
+      "path": "input/IMG_7184.jpg",
+      "classes": [
+        "kumlokk"
+      ],
+      "primary_class": "kumlokk",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 3,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7185.jpg": {
+      "path": "input/IMG_7185.jpg",
+      "classes": [
+        "kumlokk"
+      ],
+      "primary_class": "kumlokk",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 1,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7186.jpg": {
+      "path": "input/IMG_7186.jpg",
+      "classes": [
+        "kumlokk"
+      ],
+      "primary_class": "kumlokk",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 4,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7187.jpg": {
+      "path": "input/IMG_7187.jpg",
+      "classes": [
+        "kumlokk"
+      ],
+      "primary_class": "kumlokk",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 4,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7188.jpg": {
+      "path": "input/IMG_7188.jpg",
+      "classes": [
+        "kumlokk"
+      ],
+      "primary_class": "kumlokk",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 4,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7189.jpg": {
+      "path": "input/IMG_7189.jpg",
+      "classes": [
+        "kumlokk"
+      ],
+      "primary_class": "kumlokk",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 4,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7190.jpg": {
+      "path": "input/IMG_7190.jpg",
+      "classes": [
+        "kumlokk"
+      ],
+      "primary_class": "kumlokk",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 2,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7191.jpg": {
+      "path": "input/IMG_7191.jpg",
+      "classes": [
+        "kumlokk"
+      ],
+      "primary_class": "kumlokk",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 2,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7192.jpg": {
+      "path": "input/IMG_7192.jpg",
+      "classes": [
+        "kumlokk"
+      ],
+      "primary_class": "kumlokk",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 2,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7193.jpg": {
+      "path": "input/IMG_7193.jpg",
+      "classes": [
+        "kumlokk"
+      ],
+      "primary_class": "kumlokk",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 2,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7194.jpg": {
+      "path": "input/IMG_7194.jpg",
+      "classes": [
+        "kumlokk"
+      ],
+      "primary_class": "kumlokk",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 1,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7195.jpg": {
+      "path": "input/IMG_7195.jpg",
+      "classes": [
+        "kumlokk"
+      ],
+      "primary_class": "kumlokk",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 1,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7196.jpg": {
+      "path": "input/IMG_7196.jpg",
+      "classes": [
+        "kumlokk"
+      ],
+      "primary_class": "kumlokk",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 1,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7197.jpg": {
+      "path": "input/IMG_7197.jpg",
+      "classes": [
+        "kumlokk"
+      ],
+      "primary_class": "kumlokk",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 1,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7198.jpg": {
+      "path": "input/IMG_7198.jpg",
+      "classes": [
+        "sluk",
+        "kumlokk"
+      ],
+      "primary_class": "sluk",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 1,
+        "kumlokk": 1,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7199.jpg": {
+      "path": "input/IMG_7199.jpg",
+      "classes": [
+        "sluk",
+        "kumlokk"
+      ],
+      "primary_class": "sluk",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 1,
+        "kumlokk": 1,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7200.jpg": {
+      "path": "input/IMG_7200.jpg",
+      "classes": [
+        "elsparkesykkel"
+      ],
+      "primary_class": "elsparkesykkel",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 0,
+        "elsparkesykkel": 2
+      }
+    },
+    "IMG_7201.jpg": {
+      "path": "input/IMG_7201.jpg",
+      "classes": [
+        "elsparkesykkel"
+      ],
+      "primary_class": "elsparkesykkel",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 0,
+        "elsparkesykkel": 2
+      }
+    },
+    "IMG_7202.jpg": {
+      "path": "input/IMG_7202.jpg",
+      "classes": [
+        "elsparkesykkel"
+      ],
+      "primary_class": "elsparkesykkel",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 0,
+        "elsparkesykkel": 1
+      }
+    },
+    "IMG_7203.jpg": {
+      "path": "input/IMG_7203.jpg",
+      "classes": [
+        "elsparkesykkel"
+      ],
+      "primary_class": "elsparkesykkel",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 0,
+        "elsparkesykkel": 1
+      }
+    },
+    "IMG_7204.jpg": {
+      "path": "input/IMG_7204.jpg",
+      "classes": [
+        "elsparkesykkel"
+      ],
+      "primary_class": "elsparkesykkel",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 0,
+        "elsparkesykkel": 3
+      }
+    },
+    "IMG_7205.jpg": {
+      "path": "input/IMG_7205.jpg",
+      "classes": [
+        "elsparkesykkel"
+      ],
+      "primary_class": "elsparkesykkel",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 0,
+        "elsparkesykkel": 2
+      }
+    },
+    "IMG_7206.jpg": {
+      "path": "input/IMG_7206.jpg",
+      "classes": [
+        "elsparkesykkel"
+      ],
+      "primary_class": "elsparkesykkel",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 0,
+        "elsparkesykkel": 2
+      }
+    },
+    "IMG_7207.jpg": {
+      "path": "input/IMG_7207.jpg",
+      "classes": [
+        "elsparkesykkel"
+      ],
+      "primary_class": "elsparkesykkel",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 0,
+        "elsparkesykkel": 2
+      }
+    },
+    "IMG_7208.jpg": {
+      "path": "input/IMG_7208.jpg",
+      "classes": [
+        "elsparkesykkel"
+      ],
+      "primary_class": "elsparkesykkel",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 0,
+        "elsparkesykkel": 2
+      }
+    },
+    "IMG_7209.jpg": {
+      "path": "input/IMG_7209.jpg",
+      "classes": [
+        "elsparkesykkel"
+      ],
+      "primary_class": "elsparkesykkel",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 0,
+        "elsparkesykkel": 1
+      }
+    },
+    "IMG_7210.jpg": {
+      "path": "input/IMG_7210.jpg",
+      "classes": [
+        "elsparkesykkel"
+      ],
+      "primary_class": "elsparkesykkel",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 0,
+        "elsparkesykkel": 1
+      }
+    },
+    "IMG_7211.jpg": {
+      "path": "input/IMG_7211.jpg",
+      "classes": [
+        "elsparkesykkel"
+      ],
+      "primary_class": "elsparkesykkel",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 0,
+        "elsparkesykkel": 2
+      }
+    },
+    "IMG_7212.jpg": {
+      "path": "input/IMG_7212.jpg",
+      "classes": [
+        "elsparkesykkel"
+      ],
+      "primary_class": "elsparkesykkel",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 0,
+        "elsparkesykkel": 2
+      }
+    },
+    "IMG_7213.jpg": {
+      "path": "input/IMG_7213.jpg",
+      "classes": [
+        "elsparkesykkel"
+      ],
+      "primary_class": "elsparkesykkel",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 0,
+        "elsparkesykkel": 2
+      }
+    },
+    "IMG_7214.jpg": {
+      "path": "input/IMG_7214.jpg",
+      "classes": [
+        "elsparkesykkel"
+      ],
+      "primary_class": "elsparkesykkel",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 0,
+        "elsparkesykkel": 2
+      }
+    },
+    "IMG_7215.jpg": {
+      "path": "input/IMG_7215.jpg",
+      "classes": [
+        "kumlokk"
+      ],
+      "primary_class": "kumlokk",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 2,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7216.jpg": {
+      "path": "input/IMG_7216.jpg",
+      "classes": [
+        "kumlokk"
+      ],
+      "primary_class": "kumlokk",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 2,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7217.jpg": {
+      "path": "input/IMG_7217.jpg",
+      "classes": [
+        "elsparkesykkel"
+      ],
+      "primary_class": "elsparkesykkel",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 0,
+        "elsparkesykkel": 2
+      }
+    },
+    "IMG_7218.jpg": {
+      "path": "input/IMG_7218.jpg",
+      "classes": [
+        "elsparkesykkel"
+      ],
+      "primary_class": "elsparkesykkel",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 0,
+        "elsparkesykkel": 2
+      }
+    },
+    "IMG_7219.jpg": {
+      "path": "input/IMG_7219.jpg",
+      "classes": [
+        "elsparkesykkel"
+      ],
+      "primary_class": "elsparkesykkel",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 0,
+        "elsparkesykkel": 2
+      }
+    },
+    "IMG_7220.jpg": {
+      "path": "input/IMG_7220.jpg",
+      "classes": [
+        "elsparkesykkel"
+      ],
+      "primary_class": "elsparkesykkel",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 0,
+        "elsparkesykkel": 1
+      }
+    },
+    "IMG_7221.jpg": {
+      "path": "input/IMG_7221.jpg",
+      "classes": [
+        "elsparkesykkel"
+      ],
+      "primary_class": "elsparkesykkel",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 0,
+        "elsparkesykkel": 1
+      }
+    },
+    "IMG_7222.jpg": {
+      "path": "input/IMG_7222.jpg",
+      "classes": [
+        "elsparkesykkel"
+      ],
+      "primary_class": "elsparkesykkel",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 0,
+        "elsparkesykkel": 1
+      }
+    },
+    "IMG_7223.jpg": {
+      "path": "input/IMG_7223.jpg",
+      "classes": [
+        "elsparkesykkel"
+      ],
+      "primary_class": "elsparkesykkel",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 0,
+        "elsparkesykkel": 1
+      }
+    },
+    "IMG_7224.jpg": {
+      "path": "input/IMG_7224.jpg",
+      "classes": [
+        "elsparkesykkel"
+      ],
+      "primary_class": "elsparkesykkel",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 0,
+        "elsparkesykkel": 1
+      }
+    },
+    "IMG_7225.jpg": {
+      "path": "input/IMG_7225.jpg",
+      "classes": [
+        "kumlokk"
+      ],
+      "primary_class": "kumlokk",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 1,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7226.jpg": {
+      "path": "input/IMG_7226.jpg",
+      "classes": [
+        "kumlokk"
+      ],
+      "primary_class": "kumlokk",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 1,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7227.jpg": {
+      "path": "input/IMG_7227.jpg",
+      "classes": [
+        "kumlokk"
+      ],
+      "primary_class": "kumlokk",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 1,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7228.jpg": {
+      "path": "input/IMG_7228.jpg",
+      "classes": [
+        "kumlokk"
+      ],
+      "primary_class": "kumlokk",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 1,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7229.jpg": {
+      "path": "input/IMG_7229.jpg",
+      "classes": [
+        "kumlokk"
+      ],
+      "primary_class": "kumlokk",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 1,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7230.jpg": {
+      "path": "input/IMG_7230.jpg",
+      "classes": [
+        "kumlokk"
+      ],
+      "primary_class": "kumlokk",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 1,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7231.jpg": {
+      "path": "input/IMG_7231.jpg",
+      "classes": [
+        "sluk"
+      ],
+      "primary_class": "sluk",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 1,
+        "kumlokk": 0,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7232.jpg": {
+      "path": "input/IMG_7232.jpg",
+      "classes": [
+        "sluk"
+      ],
+      "primary_class": "sluk",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 1,
+        "kumlokk": 0,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7233.jpg": {
+      "path": "input/IMG_7233.jpg",
+      "classes": [
+        "sluk",
+        "kumlokk"
+      ],
+      "primary_class": "sluk",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 1,
+        "kumlokk": 1,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7234.jpg": {
+      "path": "input/IMG_7234.jpg",
+      "classes": [
+        "kumlokk"
+      ],
+      "primary_class": "kumlokk",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 1,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7235.jpg": {
+      "path": "input/IMG_7235.jpg",
+      "classes": [
+        "kumlokk"
+      ],
+      "primary_class": "kumlokk",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 1,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7236.jpg": {
+      "path": "input/IMG_7236.jpg",
+      "classes": [
+        "kumlokk"
+      ],
+      "primary_class": "kumlokk",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 1,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7237.jpg": {
+      "path": "input/IMG_7237.jpg",
+      "classes": [
+        "kumlokk"
+      ],
+      "primary_class": "kumlokk",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 1,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7238.jpg": {
+      "path": "input/IMG_7238.jpg",
+      "classes": [
+        "kumlokk"
+      ],
+      "primary_class": "kumlokk",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 1,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7239.jpg": {
+      "path": "input/IMG_7239.jpg",
+      "classes": [
+        "kumlokk"
+      ],
+      "primary_class": "kumlokk",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 1,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7240.jpg": {
+      "path": "input/IMG_7240.jpg",
+      "classes": [
+        "kumlokk"
+      ],
+      "primary_class": "kumlokk",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 1,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7241.jpg": {
+      "path": "input/IMG_7241.jpg",
+      "classes": [
+        "kumlokk"
+      ],
+      "primary_class": "kumlokk",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 2,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7242.jpg": {
+      "path": "input/IMG_7242.jpg",
+      "classes": [
+        "kumlokk"
+      ],
+      "primary_class": "kumlokk",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 2,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7243.jpg": {
+      "path": "input/IMG_7243.jpg",
+      "classes": [
+        "kumlokk"
+      ],
+      "primary_class": "kumlokk",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 2,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7244.jpg": {
+      "path": "input/IMG_7244.jpg",
+      "classes": [
+        "kumlokk"
+      ],
+      "primary_class": "kumlokk",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 2,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7245.jpg": {
+      "path": "input/IMG_7245.jpg",
+      "classes": [
+        "kumlokk"
+      ],
+      "primary_class": "kumlokk",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 1,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7246.jpg": {
+      "path": "input/IMG_7246.jpg",
+      "classes": [
+        "kumlokk"
+      ],
+      "primary_class": "kumlokk",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 1,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7247.jpg": {
+      "path": "input/IMG_7247.jpg",
+      "classes": [
+        "kumlokk"
+      ],
+      "primary_class": "kumlokk",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 2,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7248.jpg": {
+      "path": "input/IMG_7248.jpg",
+      "classes": [
+        "kumlokk"
+      ],
+      "primary_class": "kumlokk",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 3,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7249.jpg": {
+      "path": "input/IMG_7249.jpg",
+      "classes": [
+        "kumlokk"
+      ],
+      "primary_class": "kumlokk",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 3,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7250.jpg": {
+      "path": "input/IMG_7250.jpg",
+      "classes": [
+        "kumlokk"
+      ],
+      "primary_class": "kumlokk",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 3,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7251.jpg": {
+      "path": "input/IMG_7251.jpg",
+      "classes": [
+        "kumlokk"
+      ],
+      "primary_class": "kumlokk",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 3,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7252.jpg": {
+      "path": "input/IMG_7252.jpg",
+      "classes": [
+        "sluk",
+        "kumlokk"
+      ],
+      "primary_class": "kumlokk",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 1,
+        "kumlokk": 3,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7253.jpg": {
+      "path": "input/IMG_7253.jpg",
+      "classes": [
+        "sluk",
+        "kumlokk"
+      ],
+      "primary_class": "kumlokk",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 1,
+        "kumlokk": 3,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7254.jpg": {
+      "path": "input/IMG_7254.jpg",
+      "classes": [
+        "sluk",
+        "kumlokk"
+      ],
+      "primary_class": "kumlokk",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 1,
+        "kumlokk": 2,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7255.jpg": {
+      "path": "input/IMG_7255.jpg",
+      "classes": [
+        "sluk",
+        "kumlokk"
+      ],
+      "primary_class": "kumlokk",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 1,
+        "kumlokk": 2,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7256.jpg": {
+      "path": "input/IMG_7256.jpg",
+      "classes": [
+        "kumlokk"
+      ],
+      "primary_class": "kumlokk",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 2,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7257.jpg": {
+      "path": "input/IMG_7257.jpg",
+      "classes": [
+        "kumlokk"
+      ],
+      "primary_class": "kumlokk",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 2,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7258.jpg": {
+      "path": "input/IMG_7258.jpg",
+      "classes": [
+        "kumlokk"
+      ],
+      "primary_class": "kumlokk",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 1,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7259.jpg": {
+      "path": "input/IMG_7259.jpg",
+      "classes": [
+        "elsparkesykkel"
+      ],
+      "primary_class": "elsparkesykkel",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 0,
+        "elsparkesykkel": 2
+      }
+    },
+    "IMG_7260.jpg": {
+      "path": "input/IMG_7260.jpg",
+      "classes": [
+        "elsparkesykkel"
+      ],
+      "primary_class": "elsparkesykkel",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 0,
+        "elsparkesykkel": 1
+      }
+    },
+    "IMG_7261.jpg": {
+      "path": "input/IMG_7261.jpg",
+      "classes": [
+        "elsparkesykkel"
+      ],
+      "primary_class": "elsparkesykkel",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 0,
+        "elsparkesykkel": 1
+      }
+    },
+    "IMG_7262.jpg": {
+      "path": "input/IMG_7262.jpg",
+      "classes": [
+        "elsparkesykkel"
+      ],
+      "primary_class": "elsparkesykkel",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 0,
+        "elsparkesykkel": 1
+      }
+    },
+    "IMG_7263.jpg": {
+      "path": "input/IMG_7263.jpg",
+      "classes": [
+        "elsparkesykkel"
+      ],
+      "primary_class": "elsparkesykkel",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 0,
+        "elsparkesykkel": 1
+      }
+    },
+    "IMG_7264.jpg": {
+      "path": "input/IMG_7264.jpg",
+      "classes": [
+        "elsparkesykkel"
+      ],
+      "primary_class": "elsparkesykkel",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 0,
+        "elsparkesykkel": 1
+      }
+    },
+    "IMG_7265.jpg": {
+      "path": "input/IMG_7265.jpg",
+      "classes": [
+        "elsparkesykkel"
+      ],
+      "primary_class": "elsparkesykkel",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 0,
+        "elsparkesykkel": 2
+      }
+    },
+    "IMG_7266.jpg": {
+      "path": "input/IMG_7266.jpg",
+      "classes": [
+        "elsparkesykkel"
+      ],
+      "primary_class": "elsparkesykkel",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 0,
+        "elsparkesykkel": 1
+      }
+    },
+    "IMG_7267.jpg": {
+      "path": "input/IMG_7267.jpg",
+      "classes": [
+        "elsparkesykkel"
+      ],
+      "primary_class": "elsparkesykkel",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 0,
+        "elsparkesykkel": 3
+      }
+    },
+    "IMG_7268.jpg": {
+      "path": "input/IMG_7268.jpg",
+      "classes": [
+        "elsparkesykkel"
+      ],
+      "primary_class": "elsparkesykkel",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 0,
+        "elsparkesykkel": 1
+      }
+    },
+    "IMG_7269.jpg": {
+      "path": "input/IMG_7269.jpg",
+      "classes": [
+        "elsparkesykkel"
+      ],
+      "primary_class": "elsparkesykkel",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 0,
+        "elsparkesykkel": 1
+      }
+    },
+    "IMG_7270.jpg": {
+      "path": "input/IMG_7270.jpg",
+      "classes": [
+        "elsparkesykkel"
+      ],
+      "primary_class": "elsparkesykkel",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 0,
+        "elsparkesykkel": 2
+      }
+    },
+    "IMG_7271.jpg": {
+      "path": "input/IMG_7271.jpg",
+      "classes": [
+        "elsparkesykkel"
+      ],
+      "primary_class": "elsparkesykkel",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 0,
+        "elsparkesykkel": 2
+      }
+    },
+    "IMG_7272.jpg": {
+      "path": "input/IMG_7272.jpg",
+      "classes": [
+        "elsparkesykkel"
+      ],
+      "primary_class": "elsparkesykkel",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 0,
+        "elsparkesykkel": 2
+      }
+    },
+    "IMG_7273.jpg": {
+      "path": "input/IMG_7273.jpg",
+      "classes": [
+        "elsparkesykkel"
+      ],
+      "primary_class": "elsparkesykkel",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 0,
+        "elsparkesykkel": 1
+      }
+    },
+    "IMG_7274.jpg": {
+      "path": "input/IMG_7274.jpg",
+      "classes": [
+        "elsparkesykkel"
+      ],
+      "primary_class": "elsparkesykkel",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 0,
+        "elsparkesykkel": 1
+      }
+    },
+    "IMG_7276.jpg": {
+      "path": "input/IMG_7276.jpg",
+      "classes": [
+        "elsparkesykkel"
+      ],
+      "primary_class": "elsparkesykkel",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 0,
+        "elsparkesykkel": 1
+      }
+    },
+    "IMG_7277.jpg": {
+      "path": "input/IMG_7277.jpg",
+      "classes": [
+        "elsparkesykkel"
+      ],
+      "primary_class": "elsparkesykkel",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 0,
+        "elsparkesykkel": 5
+      }
+    },
+    "IMG_7278.jpg": {
+      "path": "input/IMG_7278.jpg",
+      "classes": [
+        "elsparkesykkel"
+      ],
+      "primary_class": "elsparkesykkel",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 0,
+        "elsparkesykkel": 5
+      }
+    },
+    "IMG_7279.jpg": {
+      "path": "input/IMG_7279.jpg",
+      "classes": [
+        "elsparkesykkel"
+      ],
+      "primary_class": "elsparkesykkel",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 0,
+        "elsparkesykkel": 4
+      }
+    },
+    "IMG_7280.jpg": {
+      "path": "input/IMG_7280.jpg",
+      "classes": [
+        "elsparkesykkel"
+      ],
+      "primary_class": "elsparkesykkel",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 0,
+        "elsparkesykkel": 4
+      }
+    },
+    "IMG_7281.jpg": {
+      "path": "input/IMG_7281.jpg",
+      "classes": [
+        "elsparkesykkel"
+      ],
+      "primary_class": "elsparkesykkel",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 0,
+        "elsparkesykkel": 4
+      }
+    },
+    "IMG_7282.jpg": {
+      "path": "input/IMG_7282.jpg",
+      "classes": [
+        "kumlokk"
+      ],
+      "primary_class": "kumlokk",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 1,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7283.jpg": {
+      "path": "input/IMG_7283.jpg",
+      "classes": [
+        "kumlokk"
+      ],
+      "primary_class": "kumlokk",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 1,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7284.jpg": {
+      "path": "input/IMG_7284.jpg",
+      "classes": [
+        "kumlokk"
+      ],
+      "primary_class": "kumlokk",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 1,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7285.jpg": {
+      "path": "input/IMG_7285.jpg",
+      "classes": [
+        "elsparkesykkel"
+      ],
+      "primary_class": "elsparkesykkel",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 0,
+        "elsparkesykkel": 3
+      }
+    },
+    "IMG_7286.jpg": {
+      "path": "input/IMG_7286.jpg",
+      "classes": [
+        "elsparkesykkel"
+      ],
+      "primary_class": "elsparkesykkel",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 0,
+        "elsparkesykkel": 3
+      }
+    },
+    "IMG_7287.jpg": {
+      "path": "input/IMG_7287.jpg",
+      "classes": [
+        "elsparkesykkel"
+      ],
+      "primary_class": "elsparkesykkel",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 0,
+        "elsparkesykkel": 1
+      }
+    },
+    "IMG_7288.jpg": {
+      "path": "input/IMG_7288.jpg",
+      "classes": [
+        "elsparkesykkel"
+      ],
+      "primary_class": "elsparkesykkel",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 0,
+        "elsparkesykkel": 1
+      }
+    },
+    "IMG_7318.jpeg": {
+      "path": "input/IMG_7318.jpeg",
+      "classes": [
+        "kumlokk"
+      ],
+      "primary_class": "kumlokk",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 1,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7319.jpeg": {
+      "path": "input/IMG_7319.jpeg",
+      "classes": [
+        "kumlokk"
+      ],
+      "primary_class": "kumlokk",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 1,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7320.jpeg": {
+      "path": "input/IMG_7320.jpeg",
+      "classes": [
+        "kumlokk"
+      ],
+      "primary_class": "kumlokk",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 1,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7321.jpeg": {
+      "path": "input/IMG_7321.jpeg",
+      "classes": [
+        "kumlokk"
+      ],
+      "primary_class": "kumlokk",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 1,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7322.jpeg": {
+      "path": "input/IMG_7322.jpeg",
+      "classes": [
+        "kumlokk"
+      ],
+      "primary_class": "kumlokk",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 1,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7323.jpeg": {
+      "path": "input/IMG_7323.jpeg",
+      "classes": [
+        "kumlokk"
+      ],
+      "primary_class": "kumlokk",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 1,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7324.jpeg": {
+      "path": "input/IMG_7324.jpeg",
+      "classes": [
+        "kumlokk"
+      ],
+      "primary_class": "kumlokk",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 1,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7325.jpeg": {
+      "path": "input/IMG_7325.jpeg",
+      "classes": [
+        "kumlokk"
+      ],
+      "primary_class": "kumlokk",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 1,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7326.jpeg": {
+      "path": "input/IMG_7326.jpeg",
+      "classes": [
+        "kumlokk"
+      ],
+      "primary_class": "kumlokk",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 1,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7327.jpeg": {
+      "path": "input/IMG_7327.jpeg",
+      "classes": [
+        "kumlokk"
+      ],
+      "primary_class": "kumlokk",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 1,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7328.jpeg": {
+      "path": "input/IMG_7328.jpeg",
+      "classes": [
+        "kumlokk"
+      ],
+      "primary_class": "kumlokk",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 1,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7329.jpeg": {
+      "path": "input/IMG_7329.jpeg",
+      "classes": [
+        "kumlokk"
+      ],
+      "primary_class": "kumlokk",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 2,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7330.jpeg": {
+      "path": "input/IMG_7330.jpeg",
+      "classes": [
+        "kumlokk"
+      ],
+      "primary_class": "kumlokk",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 2,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7331.jpeg": {
+      "path": "input/IMG_7331.jpeg",
+      "classes": [
+        "kumlokk"
+      ],
+      "primary_class": "kumlokk",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 2,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7332.jpeg": {
+      "path": "input/IMG_7332.jpeg",
+      "classes": [
+        "kumlokk"
+      ],
+      "primary_class": "kumlokk",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 1,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7333.jpeg": {
+      "path": "input/IMG_7333.jpeg",
+      "classes": [
+        "kumlokk"
+      ],
+      "primary_class": "kumlokk",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 1,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7334.jpeg": {
+      "path": "input/IMG_7334.jpeg",
+      "classes": [
+        "kumlokk"
+      ],
+      "primary_class": "kumlokk",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 1,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7335.jpeg": {
+      "path": "input/IMG_7335.jpeg",
+      "classes": [
+        "kumlokk"
+      ],
+      "primary_class": "kumlokk",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 1,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7336.jpeg": {
+      "path": "input/IMG_7336.jpeg",
+      "classes": [
+        "kumlokk"
+      ],
+      "primary_class": "kumlokk",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 2,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7337.jpeg": {
+      "path": "input/IMG_7337.jpeg",
+      "classes": [
+        "kumlokk"
+      ],
+      "primary_class": "kumlokk",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 2,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7338.jpeg": {
+      "path": "input/IMG_7338.jpeg",
+      "classes": [
+        "kumlokk"
+      ],
+      "primary_class": "kumlokk",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 1,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7339.jpeg": {
+      "path": "input/IMG_7339.jpeg",
+      "classes": [
+        "kumlokk"
+      ],
+      "primary_class": "kumlokk",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 1,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7340.jpeg": {
+      "path": "input/IMG_7340.jpeg",
+      "classes": [
+        "kumlokk"
+      ],
+      "primary_class": "kumlokk",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 1,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7341.jpeg": {
+      "path": "input/IMG_7341.jpeg",
+      "classes": [
+        "kumlokk"
+      ],
+      "primary_class": "kumlokk",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 1,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7342.jpeg": {
+      "path": "input/IMG_7342.jpeg",
+      "classes": [
+        "stikkontakt"
+      ],
+      "primary_class": "stikkontakt",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 1,
+        "sluk": 0,
+        "kumlokk": 0,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7343.jpeg": {
+      "path": "input/IMG_7343.jpeg",
+      "classes": [
+        "stikkontakt"
+      ],
+      "primary_class": "stikkontakt",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 1,
+        "sluk": 0,
+        "kumlokk": 0,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7344.jpeg": {
+      "path": "input/IMG_7344.jpeg",
+      "classes": [
+        "stikkontakt"
+      ],
+      "primary_class": "stikkontakt",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 1,
+        "sluk": 0,
+        "kumlokk": 0,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7345.jpeg": {
+      "path": "input/IMG_7345.jpeg",
+      "classes": [
+        "stikkontakt"
+      ],
+      "primary_class": "stikkontakt",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 1,
+        "sluk": 0,
+        "kumlokk": 0,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7346.jpeg": {
+      "path": "input/IMG_7346.jpeg",
+      "classes": [
+        "stikkontakt"
+      ],
+      "primary_class": "stikkontakt",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 1,
+        "sluk": 0,
+        "kumlokk": 0,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7347.jpeg": {
+      "path": "input/IMG_7347.jpeg",
+      "classes": [
+        "stikkontakt"
+      ],
+      "primary_class": "stikkontakt",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 1,
+        "sluk": 0,
+        "kumlokk": 0,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7348.jpeg": {
+      "path": "input/IMG_7348.jpeg",
+      "classes": [
+        "stikkontakt"
+      ],
+      "primary_class": "stikkontakt",
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 1,
+        "sluk": 0,
+        "kumlokk": 0,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7349.jpeg": {
+      "path": "input/IMG_7349.jpeg",
+      "classes": [
+        "bryter"
+      ],
+      "primary_class": "bryter",
+      "counts": {
+        "blank": 0,
+        "bryter": 1,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 0,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7350.jpeg": {
+      "path": "input/IMG_7350.jpeg",
+      "classes": [
+        "bryter"
+      ],
+      "primary_class": "bryter",
+      "counts": {
+        "blank": 0,
+        "bryter": 1,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 0,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7351.jpeg": {
+      "path": "input/IMG_7351.jpeg",
+      "classes": [
+        "bryter"
+      ],
+      "primary_class": "bryter",
+      "counts": {
+        "blank": 0,
+        "bryter": 1,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 0,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7352.jpeg": {
+      "path": "input/IMG_7352.jpeg",
+      "classes": [
+        "bryter"
+      ],
+      "primary_class": "bryter",
+      "counts": {
+        "blank": 0,
+        "bryter": 1,
+        "stikkontakt": 0,
+        "sluk": 0,
+        "kumlokk": 0,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7353.jpeg": {
+      "path": "input/IMG_7353.jpeg",
+      "classes": [
+        "bryter",
+        "stikkontakt"
+      ],
+      "primary_class": "bryter",
+      "counts": {
+        "blank": 0,
+        "bryter": 1,
+        "stikkontakt": 1,
+        "sluk": 0,
+        "kumlokk": 0,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7354.jpeg": {
+      "path": "input/IMG_7354.jpeg",
+      "classes": [
+        "bryter",
+        "stikkontakt"
+      ],
+      "primary_class": "bryter",
+      "counts": {
+        "blank": 0,
+        "bryter": 1,
+        "stikkontakt": 1,
+        "sluk": 0,
+        "kumlokk": 0,
+        "elsparkesykkel": 0
+      }
+    },
+    "IMG_7355.jpeg": {
+      "path": "input/IMG_7355.jpeg",
+      "classes": [],
+      "primary_class": null,
+      "counts": {
+        "blank": 0,
+        "bryter": 0,
+        "stikkontakt": 0,
+        "elsparkesykkel": 0,
+        "sluk": 0,
+        "kumlokk": 0
+      }
+    }
+  }
+}
