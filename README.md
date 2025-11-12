@@ -350,7 +350,7 @@ Contributions welcome! Please:
 
 ## 📧 Contact
 
-For questions or issues, please [create an issue](link-to-issues) or contact [your-email].
+For questions or issues, please [create an issue](https://github.com/punnerud/attention_with_dataset/issues).
 
 ---
 
