@@ -1,7 +1,6 @@
 # Large data files - do not commit
-input/
-output/
-data/
+output/*.pth
+output/*.png
 
 # Python cache
 __pycache__/
