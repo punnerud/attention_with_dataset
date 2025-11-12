@@ -315,6 +315,12 @@
                     <label for="showAttention">🔥 Show Attention Map</label>
                 </div>
 
+                <!-- SAM Segmentation toggle -->
+                <div class="attention-toggle" id="samToggleContainer" style="display: none;">
+                    <input type="checkbox" id="showSAM" onchange="toggleSAM()">
+                    <label for="showSAM">✂️ Show SAM Segmentation</label>
+                </div>
+
                 <div id="classControls"></div>
 
                 <div class="instructions">
@@ -356,6 +362,11 @@
                 // Show attention toggle if model is available
                 if (config.model_available) {
                     document.getElementById('attentionToggleContainer').style.display = 'flex';
+                }
+
+                // Show SAM toggle if SAM is available
+                if (config.sam_available) {
+                    document.getElementById('samToggleContainer').style.display = 'flex';
                 }
 
                 // Find first unannotated image or start at 0
@@ -430,10 +441,14 @@
             overlay.id = 'attentionOverlay';
             container.appendChild(overlay);
 
-            // Reset attention checkbox
+            // Reset attention and SAM checkboxes
             const attentionCheckbox = document.getElementById('showAttention');
+            const samCheckbox = document.getElementById('showSAM');
             if (attentionCheckbox) {
                 attentionCheckbox.checked = false;
+            }
+            if (samCheckbox) {
+                samCheckbox.checked = false;
             }
 
             // Load annotation
@@ -561,7 +576,13 @@
 
         async function toggleAttention() {
             const checkbox = document.getElementById('showAttention');
+            const samCheckbox = document.getElementById('showSAM');
             const overlay = document.getElementById('attentionOverlay');
+
+            // Uncheck SAM if attention is being turned on
+            if (checkbox.checked && samCheckbox) {
+                samCheckbox.checked = false;
+            }
 
             if (checkbox.checked) {
                 // Show attention
@@ -584,6 +605,43 @@
                 }
             } else {
                 // Hide attention
+                overlay.classList.remove('visible');
+            }
+        }
+
+        async function toggleSAM() {
+            const checkbox = document.getElementById('showSAM');
+            const attentionCheckbox = document.getElementById('showAttention');
+            const overlay = document.getElementById('attentionOverlay');
+
+            // Uncheck attention if SAM is being turned on
+            if (checkbox.checked && attentionCheckbox) {
+                attentionCheckbox.checked = false;
+            }
+
+            if (checkbox.checked) {
+                // Show SAM segmentation
+                overlay.classList.add('visible');
+                overlay.innerHTML = '<div class="loading-spinner"></div>';
+
+                try {
+                    const imageName = images[currentIndex];
+                    const res = await fetch(`/api/sam-segmentation/${imageName}`);
+                    const data = await res.json();
+
+                    if (data.sam_image) {
+                        overlay.innerHTML = `<img src="data:image/png;base64,${data.sam_image}" alt="SAM Segmentation">`;
+                    } else if (data.error) {
+                        overlay.innerHTML = `<div style="color: red;">${data.error}</div>`;
+                    } else {
+                        overlay.innerHTML = '<div style="color: red;">Failed to load SAM segmentation</div>';
+                    }
+                } catch (error) {
+                    console.error('Failed to load SAM:', error);
+                    overlay.innerHTML = '<div style="color: red;">Error loading SAM segmentation</div>';
+                }
+            } else {
+                // Hide SAM
                 overlay.classList.remove('visible');
             }
         }
