@@ -1326,6 +1326,21 @@ if __name__ == "__main__":
         print("\n⚠️  WARNING: No images found in input/ folder!")
         print("   Please add images (.jpg, .jpeg, .png, .bmp) and restart.")
 
+    # Try to load SAM at startup
+    print("\n🔍 Checking for optional models...")
+    if MODEL_PATH.exists():
+        print("   ✓ Attention model found")
+    else:
+        print("   ℹ Attention model not found (train first)")
+
+    sam_result = load_sam_model()
+    if sam_result is not None:
+        print("   ✓ SAM model loaded - segmentation available!")
+    else:
+        print("   ℹ SAM not available (optional)")
+        print("     Install: pip install segment-anything")
+        print("     Download checkpoint to output/ folder")
+
     print("\n🌐 Starting web server...")
     print("   Open your browser and go to: http://localhost:8100")
     print("\n   Press Ctrl+C to stop the server")
