@@ -1,0 +1,41 @@
+# Large data files - do not commit
+input/
+output/
+data/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# Jupyter notebooks
+*.ipynb_checkpoints
+
+# Virtual environments
+venv/
+env/
+ENV/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# macOS
+.DS_Store
+
+# Temporary files
+*.zip
+*.tar.gz
+reduce_images.py
+fix_annotations.py
+fix_all_annotations.py
+
+# Keep structure but not content
+!data/annotations/.gitkeep
+!input/.gitkeep
+!output/.gitkeep
+output/*.pth

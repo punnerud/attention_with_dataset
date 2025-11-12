@@ -1,0 +1,387 @@
+Hvordan kan man sette trene en attention modell, lignende de gjorde i fast.ai. Gjerne med PyTorch. Eks bruke en eksisterende modell, trene på JA/NEI eller klasser, uten å angi hvor i bildet. For så å hente ut attention på hva/hvor den tror objektet er i bildet.
+
+Kult prosjekt! Det du beskriver er “weakly-supervised localization”: tren en helt vanlig bildeklassifikator kun på bilde-etiketter (JA/NEI eller klasser), og hent ut **hvor** modellen ser etter signalet via CAM/Grad-CAM eller ViT-attention. Under får du en enkel, pragmatisk oppskrift i PyTorch—først med ResNet + Grad-CAM (mest robust), og helt til slutt kort om ViT-attention hvis du vil prøve transformer-basert “attention rollout”.
+
+# Fremgangsmåte (kort)
+
+1. Start med en forhåndstrent CNN (f.eks. ResNet50).
+2. Bytt ut siste klassifiseringslag til dine klasser (2 for JA/NEI eller N for klasser).
+3. Tren kun på bilde-nivå etiketter.
+4. Etter trening: hent ut **varmekart** som viser “hvor” modellen fant evidens (Grad-CAM / CAM).
+5. (Valgfritt) Terskelsett varmekartet for å lage grove bokser/segmenter av objekter.
+
+---
+
+# A) ResNet + Grad-CAM (anbefalt)
+
+Dette fungerer rett ut av boksen med `torchvision` og krever ingen spesielle annotations utover klassene dine.
+
+## 1) Minimal treningssløyfe (transfer learning)
+
+```python
+import torch, torch.nn as nn, torch.nn.functional as F
+from torch.utils.data import DataLoader
+from torchvision import datasets, transforms, models
+
+device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+
+# --- Data ---
+train_tf = transforms.Compose([
+    transforms.Resize(256),
+    transforms.RandomResizedCrop(224),
+    transforms.RandomHorizontalFlip(),
+    transforms.ToTensor(),
+    transforms.Normalize(mean=[0.485,0.456,0.406], std=[0.229,0.224,0.225]),
+])
+val_tf = transforms.Compose([
+    transforms.Resize(256),
+    transforms.CenterCrop(224),
+    transforms.ToTensor(),
+    transforms.Normalize(mean=[0.485,0.456,0.406], std=[0.229,0.224,0.225]),
+])
+
+train_ds = datasets.ImageFolder('data/train', transform=train_tf)
+val_ds   = datasets.ImageFolder('data/val',   transform=val_tf)
+train_dl = DataLoader(train_ds, batch_size=32, shuffle=True, num_workers=4, pin_memory=True)
+val_dl   = DataLoader(val_ds,   batch_size=32, shuffle=False, num_workers=4, pin_memory=True)
+
+num_classes = len(train_ds.classes)  # 2 for JA/NEI eller >2
+
+# --- Modell ---
+model = models.resnet50(weights=models.ResNet50_Weights.IMAGENET1K_V2)
+model.fc = nn.Linear(model.fc.in_features, num_classes)
+model.to(device)
+
+criterion = nn.CrossEntropyLoss()  # For binær JA/NEI kan du også bruke 2 klasser med CE (enkelt)
+optimizer = torch.optim.AdamW(model.parameters(), lr=3e-4, weight_decay=1e-4)
+scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(optimizer, T_max=10)
+
+def evaluate():
+    model.eval()
+    correct, total, loss_sum = 0, 0, 0.0
+    with torch.no_grad():
+        for x,y in val_dl:
+            x,y = x.to(device), y.to(device)
+            logits = model(x)
+            loss = criterion(logits, y)
+            loss_sum += loss.item() * x.size(0)
+            pred = logits.argmax(1)
+            correct += (pred==y).sum().item()
+            total += x.size(0)
+    return loss_sum/total, correct/total
+
+for epoch in range(10):
+    model.train()
+    for x,y in train_dl:
+        x,y = x.to(device), y.to(device)
+        optimizer.zero_grad()
+        logits = model(x)
+        loss = criterion(logits, y)
+        loss.backward()
+        optimizer.step()
+    scheduler.step()
+    val_loss, val_acc = evaluate()
+    print(f"Epoch {epoch+1}: val_loss={val_loss:.4f}, val_acc={val_acc:.3f}")
+
+torch.save(model.state_dict(), "resnet50_weakloc.pth")
+```
+
+> Tips:
+>
+> * For JA/NEI er det enklest å ha **2 klasser** og `CrossEntropyLoss`. (Alternativt én logit + `BCEWithLogitsLoss`, men CAM/Grad-CAM er mest rett fram med 2 klasser.)
+> * Øk input-oppløsningen (f.eks. 448) når du vil ha skarpere varmekart.
+> * Ikke “pool” for mye; ResNet50 er OK, og Grad-CAM på `layer4[-1]` gir fine kart.
+
+## 2) Hent ut varmekart med Grad-CAM
+
+```python
+import numpy as np
+from PIL import Image
+import matplotlib.pyplot as plt
+import torchvision.transforms.functional as TF
+
+# Hook på siste blokk i layer4:
+target_layer = model.layer4[-1]
+
+_fmaps = []
+_grads = []
+
+def fwd_hook(module, inp, out):
+    _fmaps.append(out.detach())
+
+def bwd_hook(module, grad_in, grad_out):
+    # grad_out[0]: dY/d(feature_map)
+    _grads.append(grad_out[0].detach())
+
+h1 = target_layer.register_forward_hook(fwd_hook)
+h2 = target_layer.register_full_backward_hook(bwd_hook)  # ny API
+
+def grad_cam(img_pil, class_idx=None):
+    """
+    img_pil: PIL.Image (RGB)
+    class_idx: int eller None (da bruker vi topp-pred)
+    return: CAM-varmekart (H, W) i [0,1]
+    """
+    model.eval()
+    _fmaps.clear(); _grads.clear()
+
+    x = val_tf(img_pil).unsqueeze(0).to(device)  # bruk val_tf (samme norm)
+    x.requires_grad_(True)
+    logits = model(x)          # (1, C)
+    if class_idx is None:
+        class_idx = logits.argmax(1).item()
+    score = logits[0, class_idx]
+    model.zero_grad()
+    score.backward()
+
+    fmap = _fmaps[0][0]        # (C, Hf, Wf)
+    grad = _grads[0][0]        # (C, Hf, Wf)
+
+    weights = grad.mean(dim=(1,2))              # (C,)
+    cam = (weights[:, None, None] * fmap).sum(0)  # (Hf, Wf)
+    cam = F.relu(cam)
+    cam = cam - cam.min()
+    cam = cam / (cam.max() + 1e-6)
+
+    # oppskaler til input-størrelse
+    H, W = img_pil.size[1], img_pil.size[0]
+    cam = F.interpolate(cam[None, None], size=(H, W), mode='bilinear', align_corners=False)[0,0]
+    return cam.detach().cpu().numpy(), class_idx
+
+# Eksempel: vis overlegg
+def show_cam(img_pil, cam, alpha=0.45):
+    fig, ax = plt.subplots(figsize=(4,4))
+    ax.imshow(img_pil)
+    ax.imshow(cam, cmap='jet', alpha=alpha)
+    ax.axis('off')
+    plt.show()
+
+# Bruk:
+img = Image.open("eksempel.jpg").convert("RGB")
+cam, pred_cls = grad_cam(img, class_idx=None)  # None => topp-prediksjon
+print("Predikert klasse:", train_ds.classes[pred_cls])
+show_cam(img, cam)
+```
+
+## 3) Grov “hvor” som bbox/maske
+
+```python
+def cam_to_bbox(cam, thresh=0.4):
+    mask = cam >= thresh
+    if not mask.any():
+        return None
+    ys, xs = np.where(mask)
+    y1, y2 = ys.min(), ys.max()
+    x1, x2 = xs.min(), xs.max()
+    return (x1, y1, x2, y2), mask
+
+bbox, mask = cam_to_bbox(cam, thresh=0.5)
+if bbox:
+    print("Boks (x1,y1,x2,y2):", bbox)
+```
+
+> Merk: Grad-CAM funker også fint i **multiklasse**. For å se “hvorfor JA” i et JA/NEI-oppsett, sett `class_idx` til indexen for “JA”.
+
+---
+
+# B) Alternativ: CAM (uten gradienter)
+
+Hvis modellen din er **GAP + lineær classifier** (som ResNet egentlig er: global average pooling før `fc`), kan du også bruke klassisk **CAM**: en ren vektet sum av siste feature-maps med klassens lineær-vekter. Det ligner koden over, men uten `backward()`—du bruker bare `fc.weight[class_idx]` som vekter. Grad-CAM er som regel mer stabilt og generaliserer til flere arkitekturer/lag, derfor anbefales den.
+
+---
+
+# C) ViT-attention (attention rollout) – kort om veien videre
+
+Vil du ha “attention” direkte fra en Vision Transformer (ViT), kan du:
+
+1. Finetune `torchvision.models.vit_b_16` (eller `timm` sin ViT) på samme måte som over (bytt `heads` til din `num_classes`).
+2. For **attention rollout**: hent ut self-attention-matriser fra hvert transformer-lag, legg inn “skip connection”-andel (Identity), og **multiplicer** dem lag-for-lag. Resultatet gir en distribusjon av hvor CLS-token “ser” i patchene. Deretter kaster du CLS-kolonnen og reshaper patch-grid til et 2D varmekart som du oppskalerer til bildefull størrelse.
+
+Dette gir pene, patch-baserte heatmaps uten gradienter. Implementasjonen er litt mer arkitekturspesifikk (hooks inn i attention-modulene), så jeg anbefaler å starte med Grad-CAM først for å få hele løypa til å sitte.
+
+---
+
+# Tips for bedre lokalisering (uten bokser i treningsdata)
+
+* **Høyere input-oppløsning** (f.eks. 448 i stedet for 224) gir tettere varmekart.
+* **Dataaugmentering** (crop/flip, lite ColorJitter) gjør at modellen lærer mer robuste, konsistente cues.
+* **Ikke for mye nedskalering tidlig** i nettverket (ResNet fungerer fint; unngå ekstrem pooling).
+* **Terskling + post-prosessering**: Prøv Otsu/percentiler for å generere mask/bokser automatisk.
+* **Evaluer** lokalisering ved å sjekke IoU mot grove, manuelle bokser på et lite hold-out sett (om du har).
+
+Om du vil, kan jeg skreddersy koden til mappestrukturen din (klassenavn, antall klasser) eller vise et eksempel for ViT-attention rollout også.
+
+
+Kan man også gi antall per label? Eks hvis man ser 3 av en ting, og en av en annen?
+
+
+Ja! Det går helt fint å lære **antall per label** uten bokser—og samtidig få et “hvor”-kart. To praktiske veier:
+
+1. **Billigst:** tren som før (klassifisering), legg til en **telle-head** (regresjon), og bruk **Grad-CAM**/“peaks” på varmekartet for å hente ut *K* instanser (K = predikert antall).
+
+2. **Mer stabilt for telling:** legg til en **densitets-head** (per klasse) som produserer et ikke-negativt kart; summer kartet = antallet. Kartet *er* da lokaliseringa. Ingen bokser trengs i trening; du bruker bare telling per bilde.
+
+Under får du et kompakt oppsett for #2 (anbefalt), med felles backbone (ResNet50), **klassifiserings-tap** + **telle-tap** (Huber/Poisson), og enkel instans-uttrekk fra densitetskartet.
+
+---
+
+# PyTorch: weakly-supervised counting + lokalisering
+
+```python
+import torch, torch.nn as nn, torch.nn.functional as F
+from torchvision import models
+
+class WeakCount(nn.Module):
+    def __init__(self, num_classes):
+        super().__init__()
+        # Backbone uten avgpool/fc
+        m = models.resnet50(weights=models.ResNet50_Weights.IMAGENET1K_V2)
+        self.stem = nn.Sequential(
+            m.conv1, m.bn1, m.relu, m.maxpool,
+            m.layer1, m.layer2, m.layer3, m.layer4
+        )
+        ch = 2048
+
+        # Klassifiseringsgren (for stabil læring + CAM hvis du vil)
+        self.cls_pool = nn.AdaptiveAvgPool2d(1)
+        self.cls_head = nn.Linear(ch, num_classes)
+
+        # Densitetsgren (tellekart per klasse, ikke-negativt)
+        self.den_head = nn.Sequential(
+            nn.Conv2d(ch, 512, 3, padding=1),
+            nn.ReLU(inplace=True),
+            nn.Conv2d(512, num_classes, 1),
+            nn.Softplus()  # >= 0, mer stabil enn ReLU for små tall
+        )
+
+    def forward(self, x):
+        feats = self.stem(x)                  # (B, 2048, H/32, W/32)
+        # klassifisering (for presence/absence)
+        g = self.cls_pool(feats).flatten(1)   # (B, 2048)
+        logits = self.cls_head(g)             # (B, C)
+
+        # densitet + telling
+        den = self.den_head(feats)            # (B, C, h, w)
+        counts = den.flatten(2).sum(-1)       # (B, C) global sum = antall
+        return logits, den, counts
+```
+
+### Trening
+
+* Label-format per bilde:
+  `y_cls ∈ {0..C-1}` (single-label) **eller** multihot for multilabel, og
+  `y_count ∈ ℕ^C` (antall per klasse, 0 for klasser som ikke finnes).
+* Tap:
+
+  * `CE(logits, y_cls)` (evt. `BCEWithLogitsLoss` for multilabel)
+  * **Telle-tap:** `Huber` **eller** `Poisson NLL` på `counts`.
+  * *Valgfritt:* litt L1 på `den` (sparsitet) og/eller TV-regularisering (glatthet).
+
+```python
+def tv_loss(x):
+    return (x[:,:,:,1:] - x[:,:,:,:-1]).abs().mean() + (x[:,:,1:,:] - x[:,:,:-1,:]).abs().mean()
+
+model = WeakCount(num_classes=C).to(device)
+opt = torch.optim.AdamW(model.parameters(), lr=3e-4, weight_decay=1e-4)
+
+ce = nn.CrossEntropyLoss()  # eller BCEWithLogitsLoss for multilabel
+def poisson_loss(pred_counts, true_counts):
+    # pred_counts: forventningsverdi (rate) – vi brukte Softplus, så den er >=0
+    return F.poisson_nll_loss(pred_counts, true_counts, log_input=False)
+
+λ_count, λ_l1, λ_tv = 1.0, 1e-5, 1e-5
+
+model.train()
+for x, (y_cls, y_count) in train_dl:               # tilpass dataloader
+    x = x.to(device)
+    y_cls = y_cls.to(device)                       # (B,)
+    y_count = y_count.to(device).float()           # (B, C)
+
+    logits, den, counts = model(x)
+    loss_cls = ce(logits, y_cls)
+    loss_cnt = poisson_loss(counts, y_count)
+    loss_reg = λ_l1*den.mean() + λ_tv*tv_loss(den)
+
+    loss = loss_cls + λ_count*loss_cnt + loss_reg
+    opt.zero_grad(); loss.backward(); opt.step()
+```
+
+### Inference: antall + “hvor”
+
+* Antall per label kommer rett fra `counts`.
+* For lokalisering av **hver instans**, finn *peaks* i densitetskartet per klasse og lag bbokser rundt komponentene.
+* Antall peaks kan **matches til** `round(counts[c])` (ta topp-K peaks).
+
+```python
+import torch.nn.functional as F
+
+def find_peaks(dmap, k=None, thr=0.2):
+    """
+    dmap: (h,w) densitet i [0,∞)
+    k: ønsket antall instanser (f.eks. predikert count avrundet)
+    thr: relativ terskel mot dmap.max()
+    return: liste av (y,x) toppunkter
+    """
+    H,W = dmap.shape
+    x = torch.from_numpy(dmap).float().unsqueeze(0).unsqueeze(0)  # (1,1,H,W)
+    # ikke-maksimum undertrykking m/ maxpool
+    nms = F.max_pool2d(x, kernel_size=3, stride=1, padding=1)
+    mask = (x == nms) & (x >= thr*x.max())
+    ys, xs = mask[0,0].nonzero(as_tuple=True)
+    pts = [(int(y), int(x)) for y,x in zip(ys.tolist(), xs.tolist())]
+    # sorter på score
+    scores = x[0,0,ys,xs]
+    idx = scores.argsort(descending=True).tolist()
+    pts = [pts[i] for i in idx]
+    return pts[:k] if k else pts
+
+def upsample_to_img(dmap, img_hw):
+    # dmap: (h,w) -> (H,W)
+    import cv2, numpy as np
+    return cv2.resize(dmap, (img_hw[1], img_hw[0]), interpolation=cv2.INTER_CUBIC)
+
+# Bruk:
+model.eval()
+with torch.no_grad():
+    logits, den, counts = model(batch)  # den: (B,C,h,w)
+
+# For et enkelt bilde b og klasse c:
+b, c = 0, some_class_idx
+dmap = den[b, c].cpu().numpy()
+pred_count = float(counts[b, c].cpu())
+k = max(0, int(round(pred_count)))
+
+dmap_up = upsample_to_img(dmap, img_hw=(H,W))
+peaks = find_peaks(dmap_up, k=k, thr=0.3)
+
+# Lag bokser fra komponenter rundt peaks (enkelt eksempel via terskel + connected components),
+# eller ta lokale vinduer rundt peaks. (Skaler terskel adaptivt ved behov.)
+```
+
+---
+
+## Alternativ (raskest å komme i gang)
+
+Behold en ren klassifikator + **Grad-CAM**, og tell **lokale maksima i CAM**.
+For bedre kontroll, lær i tillegg en liten **count-head** på GAP-features:
+
+```python
+# etter cls_pool(g):
+count_head = nn.Sequential(nn.Linear(2048, C), nn.Softplus())  # pred_count per klasse
+# loss_cnt = Huber/Poisson mot y_count
+# Ved inferens: velg de k = round(pred_count[c]) sterkeste peakene i CAM[c].
+```
+
+Dette er veldig lett å få til hvis du allerede har CAM-koden oppe, men densitets-varianten over gir som regel renere instans-separasjon.
+
+---
+
+## Praktiske tips
+
+* **Skala**: Antall er skala-sensitivt – tren og evaluer på konsistent oppløsning (f.eks. 448 px kortside).
+* **Små tall**: `Poisson` eller `Huber` funker bedre enn MSE for 0–5 objekter.
+* **Regularisering**: Litt L1 + TV på densitetskartet hindrer at modellen “søler” massen utover hele bildet.
+* **Eval**: Treffsikkerhet på antall (MAE) + IoU/precision på boksene hentet fra kartet.
+
+Hvis du vil, kan jeg tilpasse koden til akkurat ditt label-format (binært JA/NEI med antall for “JA”, eller flere klasser) og vise komplett treningssløyfe m/ dataloader.
+
