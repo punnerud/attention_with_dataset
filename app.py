@@ -230,13 +230,17 @@ def generate_sam_segmentation(image_path, model, image_name):
         # Load annotations to get known classes for this image
         annotations = load_annotations()
         if image_name not in annotations['images']:
+            print(f"⚠️ SAM: No annotations found for {image_name}")
             return None
 
         image_annotation = annotations['images'][image_name]
         active_classes = [cls for cls, count in image_annotation['counts'].items() if count > 0]
 
         if not active_classes:
+            print(f"⚠️ SAM: No active classes for {image_name}")
             return None
+
+        print(f"🔍 SAM: Processing {image_name} with classes: {active_classes}")
 
         device = next(model.parameters()).device
 
@@ -458,7 +462,7 @@ def get_sam_segmentation(image_name):
     sam_img = generate_sam_segmentation(image_path, loaded_model, image_name)
 
     if sam_img is None:
-        return jsonify({'error': 'Failed to generate SAM segmentation'}), 500
+        return jsonify({'error': 'No annotated classes found for this image. Please annotate the image first.'}), 400
 
     return jsonify({'sam_image': sam_img})
 
