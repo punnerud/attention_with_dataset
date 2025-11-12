@@ -338,8 +338,29 @@ def generate_sam_segmentation(image_path, model, image_name):
                 multimask_output=True
             )
 
-            # Use the mask with highest score
-            best_mask = masks[np.argmax(scores)]
+            # Choose best mask: prefer smaller, more focused masks over large background
+            # Strategy: Pick the smallest mask that still has good score
+            mask_sizes = [mask.sum() for mask in masks]
+
+            # Normalize sizes and scores
+            normalized_sizes = np.array(mask_sizes) / (h_orig * w_orig)
+            normalized_scores = np.array(scores)
+
+            # Prefer masks that are:
+            # 1. Not too large (< 50% of image = likely object, not background)
+            # 2. Have decent score
+            # Score = high SAM confidence - penalty for being too large
+            mask_preference = normalized_scores - (normalized_sizes * 2)  # Penalize large masks
+
+            # Additional filter: exclude masks larger than 70% of image (definitely background)
+            valid_masks = normalized_sizes < 0.7
+            if valid_masks.any():
+                mask_preference = np.where(valid_masks, mask_preference, -np.inf)
+
+            best_mask_idx = np.argmax(mask_preference)
+            best_mask = masks[best_mask_idx]
+
+            print(f"      Mask sizes: {[f'{s:.1%}' for s in normalized_sizes]}, chose idx {best_mask_idx} (size: {normalized_sizes[best_mask_idx]:.1%})")
 
             # Visualize
             axes[ax_idx].imshow(img_np)
