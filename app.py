@@ -218,8 +218,8 @@ def generate_attention_overlay(image_path, model):
 
 def generate_sam_segmentation(image_path, model, image_name):
     """
-    Generate SAM-based segmentation using attention maps and known classes
-    This uses the attention maps as prompts to guide SAM segmentation
+    Generate SAM-based segmentation using attention maps as prompts
+    Segments all classes detected by the attention model
     """
     global sam_predictor
 
@@ -227,20 +227,7 @@ def generate_sam_segmentation(image_path, model, image_name):
         return None
 
     try:
-        # Load annotations to get known classes for this image
-        annotations = load_annotations()
-        if image_name not in annotations['images']:
-            print(f"⚠️ SAM: No annotations found for {image_name}")
-            return None
-
-        image_annotation = annotations['images'][image_name]
-        active_classes = [cls for cls, count in image_annotation['counts'].items() if count > 0]
-
-        if not active_classes:
-            print(f"⚠️ SAM: No active classes for {image_name}")
-            return None
-
-        print(f"🔍 SAM: Processing {image_name} with classes: {active_classes}")
+        print(f"🔍 SAM: Processing {image_name} with all attention-detected classes")
 
         device = next(model.parameters()).device
 
@@ -278,8 +265,8 @@ def generate_sam_segmentation(image_path, model, image_name):
         # Set SAM image
         sam_predictor.set_image(img_np)
 
-        # Create visualization
-        num_classes = len([cls for cls in model_classes if cls in active_classes])
+        # Create visualization - process ALL classes
+        num_classes = len(model_classes)
         ncols = 3
         nrows = (num_classes + ncols - 1) // ncols
 
@@ -288,9 +275,6 @@ def generate_sam_segmentation(image_path, model, image_name):
 
         ax_idx = 0
         for i, class_name in enumerate(model_classes):
-            if class_name not in active_classes:
-                continue
-
             dmap = den[i]
 
             # Upsample density map to original image size
@@ -462,7 +446,7 @@ def get_sam_segmentation(image_name):
     sam_img = generate_sam_segmentation(image_path, loaded_model, image_name)
 
     if sam_img is None:
-        return jsonify({'error': 'No annotated classes found for this image. Please annotate the image first.'}), 400
+        return jsonify({'error': 'Failed to generate SAM segmentation. Check server logs.'}), 500
 
     return jsonify({'sam_image': sam_img})
 
