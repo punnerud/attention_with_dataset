@@ -331,13 +331,15 @@ If you use this tool for research, please cite:
 
 ```
 Weakly-Supervised Object Detection with Count Annotations
-[Your Name/Organization]
+Morten Punnerud-Engelstad
 2024
 ```
 
 ## 📝 License
 
-[Add your license here]
+MIT License - see [LICENSE](LICENSE) file for details.
+
+Copyright (c) 2024 Morten Punnerud-Engelstad
 
 ## 🤝 Contributing
 
