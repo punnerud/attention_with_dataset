@@ -150,12 +150,17 @@ wget https://dl.fbaipublicfiles.com/segment_anything/sam_vit_h_4b8939.pth -P out
 
 Restart app.py, and you'll see **"Show SAM Segmentation"** toggle!
 
-**SAM segmentation features:**
-- Uses attention maps to guide segmentation
-- Only segments annotated classes (classes you've marked with counts)
-- Shows precise object boundaries with masks
-- Red stars indicate attention-guided prompt points
-- Much more accurate than raw attention maps alone
+**SAM segmentation workflow:**
+1. **Annotate first**: Mark classes present in the image (set count > 0)
+2. **Click SAM toggle**: SAM will segment ONLY the classes you annotated
+3. **Attention guides SAM**: Your model's attention map tells SAM where to look
+4. **Precise masks**: SAM creates accurate segmentation boundaries
+
+**Why this approach works:**
+- **Your annotations** = which classes to segment (ground truth)
+- **Attention map** = where to find those classes (model guidance)
+- **SAM** = precise segmentation tool (combines both inputs)
+- Red stars show attention-guided prompt points given to SAM
 
 ## 📁 Project Structure
 
