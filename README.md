@@ -112,7 +112,7 @@ Epoch [20/30], Loss: 1.2345, Count MAE: 0.89
 ✓ Training complete! Model saved to output/model.pth
 ```
 
-### 6. View Attention Maps
+### 6. View Attention Maps & Segmentation
 
 After training, restart the annotation tool:
 
@@ -120,13 +120,42 @@ After training, restart the annotation tool:
 python3 app.py
 ```
 
-Now you'll see a **"Show Attention Map"** toggle in the annotation panel. Check it to visualize where the model is looking for each class!
+Now you'll see visualization options in the annotation panel:
+
+#### 🔥 Attention Maps
+Check **"Show Attention Map"** to visualize where the model is looking for each class!
 
 **Attention maps show:**
 - Hot spots (red/yellow) where the model detects objects
 - Cool areas (blue) with low confidence
 - Separate heatmap for each class
 - Predicted counts for each class
+
+#### ✂️ SAM Segmentation (Optional)
+For precise object segmentation, install Segment Anything Model (SAM):
+
+```bash
+pip install segment-anything
+```
+
+Download a SAM checkpoint and place it in the `output/` folder:
+```bash
+# Download SAM ViT-H checkpoint (2.4GB)
+wget https://dl.fbaipublicfiles.com/segment_anything/sam_vit_h_4b8939.pth -P output/
+
+# Or use smaller models:
+# ViT-L (1.2GB): sam_vit_l_0b3195.pth
+# ViT-B (375MB): sam_vit_b_01ec64.pth
+```
+
+Restart app.py, and you'll see **"Show SAM Segmentation"** toggle!
+
+**SAM segmentation features:**
+- Uses attention maps to guide segmentation
+- Only segments annotated classes (classes you've marked with counts)
+- Shows precise object boundaries with masks
+- Red stars indicate attention-guided prompt points
+- Much more accurate than raw attention maps alone
 
 ## 📁 Project Structure
 
@@ -337,9 +366,40 @@ Morten Punnerud-Engelstad
 
 ## 📝 License
 
+### Code License
 MIT License - see [LICENSE](LICENSE) file for details.
 
 Copyright (c) 2025 Morten Punnerud-Engelstad
+
+### Model and Dependencies Licenses
+
+This project uses the following pre-trained models and libraries, each with their own licenses:
+
+#### PyTorch & TorchVision
+- **License**: BSD 3-Clause License
+- **Usage**: ResNet backbone, model training infrastructure
+- **Attribution**: Copyright (c) 2016-present, Facebook Inc. (Meta)
+- **Link**: https://github.com/pytorch/pytorch/blob/main/LICENSE
+
+#### ResNet Models (via TorchVision)
+- **License**: BSD 3-Clause License
+- **Pre-trained weights**: Trained on ImageNet, used under TorchVision license
+- **Attribution**: Kaiming He et al., "Deep Residual Learning for Image Recognition"
+- **Link**: https://github.com/pytorch/vision/blob/main/LICENSE
+
+#### Segment Anything Model (SAM) - Optional Feature
+- **License**: Apache License 2.0
+- **Usage**: Optional segmentation refinement feature
+- **Attribution**: Meta AI Research
+- **Link**: https://github.com/facebookresearch/segment-anything/blob/main/LICENSE
+- **Note**: SAM is an optional enhancement and not required for core functionality
+
+**Important**: Any trained models you create using this tool inherit the licensing terms of:
+1. Your training data (ensure you have rights to use your images)
+2. The pre-trained backbone models (ResNet under BSD-3)
+3. This codebase (MIT License)
+
+**Commercial Use**: All components (PyTorch, ResNet, SAM, MIT license) permit commercial use. Ensure your training data also permits your intended use case.
 
 ## 🤝 Contributing
 

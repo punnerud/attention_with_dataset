@@ -36,9 +36,11 @@ ANNOTATIONS_FILE.parent.mkdir(parents=True, exist_ok=True)
 # Class definitions (customize these!)
 CLASSES = ["blank", "bryter", "stikkontakt", "elsparkesykkel", "sluk", "kumlokk"]
 
-# Global model variable
+# Global model variables
 loaded_model = None
 model_classes = None
+sam_predictor = None
+sam_available = False
 
 
 def load_model():
@@ -66,6 +68,54 @@ def load_model():
         return model
     except Exception as e:
         print(f"Failed to load model: {e}")
+        return None
+
+
+def load_sam_model():
+    """Load Segment Anything Model if available"""
+    global sam_predictor, sam_available
+
+    try:
+        from segment_anything import sam_model_registry, SamPredictor
+
+        # Try to find SAM checkpoint
+        sam_checkpoint_paths = [
+            "output/sam_vit_h_4b8939.pth",
+            "output/sam_vit_l_0b3195.pth",
+            "output/sam_vit_b_01ec64.pth",
+        ]
+
+        sam_checkpoint = None
+        model_type = None
+
+        for path in sam_checkpoint_paths:
+            if Path(path).exists():
+                sam_checkpoint = path
+                if "vit_h" in path:
+                    model_type = "vit_h"
+                elif "vit_l" in path:
+                    model_type = "vit_l"
+                elif "vit_b" in path:
+                    model_type = "vit_b"
+                break
+
+        if sam_checkpoint is None:
+            print("ℹ SAM model not found. Download from: https://github.com/facebookresearch/segment-anything#model-checkpoints")
+            return None
+
+        device = torch.device('cuda' if torch.cuda.is_available() else 'mps' if torch.backends.mps.is_available() else 'cpu')
+        sam = sam_model_registry[model_type](checkpoint=sam_checkpoint)
+        sam.to(device)
+
+        sam_predictor = SamPredictor(sam)
+        sam_available = True
+        print(f"✓ SAM model loaded: {model_type}")
+        return sam_predictor
+    except ImportError:
+        print("ℹ SAM not installed. Install with: pip install segment-anything")
+        return None
+    except Exception as e:
+        print(f"Failed to load SAM: {e}")
         return None
 
 
@@ -166,6 +216,151 @@ def generate_attention_overlay(image_path, model):
         return None
 
 
+def generate_sam_segmentation(image_path, model, image_name):
+    """
+    Generate SAM-based segmentation using attention maps and known classes
+    This uses the attention maps as prompts to guide SAM segmentation
+    """
+    global sam_predictor
+
+    if model is None or sam_predictor is None:
+        return None
+
+    try:
+        # Load annotations to get known classes for this image
+        annotations = load_annotations()
+        if image_name not in annotations['images']:
+            return None
+
+        image_annotation = annotations['images'][image_name]
+        active_classes = [cls for cls, count in image_annotation['counts'].items() if count > 0]
+
+        if not active_classes:
+            return None
+
+        device = next(model.parameters()).device
+
+        # Load and preprocess image
+        img_original = Image.open(image_path).convert('RGB')
+        img_np = np.array(img_original)
+
+        # Resize maintaining aspect ratio + pad to 448x448
+        def resize_with_padding(img, target_size=448):
+            w, h = img.size
+            scale = target_size / max(w, h)
+            new_w, new_h = int(w * scale), int(h * scale)
+            img_resized = img.resize((new_w, new_h), Image.Resampling.LANCZOS)
+            img_padded = Image.new('RGB', (target_size, target_size), (0, 0, 0))
+            paste_x = (target_size - new_w) // 2
+            paste_y = (target_size - new_h) // 2
+            img_padded.paste(img_resized, (paste_x, paste_y))
+            return img_padded, (paste_x, paste_y, new_w, new_h)
+
+        img_processed, (pad_x, pad_y, img_w, img_h) = resize_with_padding(img_original, 448)
+
+        # Get attention maps from model
+        to_tensor = transforms.Compose([
+            transforms.ToTensor(),
+            transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225]),
+        ])
+
+        img_tensor = to_tensor(img_processed).unsqueeze(0).to(device)
+
+        with torch.no_grad():
+            logits, den, counts = model(img_tensor)
+
+        den = den[0].cpu().numpy()  # (C, h, w)
+
+        # Set SAM image
+        sam_predictor.set_image(img_np)
+
+        # Create visualization
+        num_classes = len([cls for cls in model_classes if cls in active_classes])
+        ncols = 3
+        nrows = (num_classes + ncols - 1) // ncols
+
+        fig, axes = plt.subplots(nrows, ncols, figsize=(12, 4 * nrows))
+        axes = axes.flatten() if num_classes > 1 else [axes]
+
+        ax_idx = 0
+        for i, class_name in enumerate(model_classes):
+            if class_name not in active_classes:
+                continue
+
+            dmap = den[i]
+
+            # Upsample density map to original image size
+            h_orig, w_orig = img_np.shape[:2]
+            dmap_up = F.interpolate(
+                torch.from_numpy(dmap).unsqueeze(0).unsqueeze(0),
+                size=(h_orig, w_orig),
+                mode='bilinear',
+                align_corners=False
+            )[0, 0].numpy()
+
+            # Find top attention points as prompts for SAM
+            threshold = np.percentile(dmap_up, 90)  # Top 10% attention
+            point_coords = np.argwhere(dmap_up > threshold)
+
+            if len(point_coords) == 0:
+                axes[ax_idx].imshow(img_np)
+                axes[ax_idx].set_title(f'{class_name}\n(No attention)', fontsize=12)
+                axes[ax_idx].axis('off')
+                ax_idx += 1
+                continue
+
+            # Sample up to 10 points (SAM works best with fewer points)
+            if len(point_coords) > 10:
+                indices = np.random.choice(len(point_coords), 10, replace=False)
+                point_coords = point_coords[indices]
+
+            # Convert to SAM format (x, y)
+            sam_points = point_coords[:, [1, 0]]  # Swap to (x, y)
+            point_labels = np.ones(len(sam_points))  # All positive prompts
+
+            # Generate mask using SAM
+            masks, scores, logits_sam = sam_predictor.predict(
+                point_coords=sam_points,
+                point_labels=point_labels,
+                multimask_output=True
+            )
+
+            # Use the mask with highest score
+            best_mask = masks[np.argmax(scores)]
+
+            # Visualize
+            axes[ax_idx].imshow(img_np)
+            axes[ax_idx].imshow(best_mask, alpha=0.5, cmap='jet')
+
+            # Show prompt points
+            axes[ax_idx].scatter(sam_points[:, 0], sam_points[:, 1],
+                               c='red', s=50, marker='*', edgecolors='white', linewidths=1)
+
+            axes[ax_idx].set_title(f'{class_name}\n(SAM Segmentation)', fontsize=12)
+            axes[ax_idx].axis('off')
+            ax_idx += 1
+
+        # Hide unused subplots
+        for i in range(ax_idx, len(axes)):
+            axes[i].axis('off')
+
+        plt.tight_layout(pad=1.0)
+
+        # Convert to base64
+        buf = io.BytesIO()
+        plt.savefig(buf, format='png', dpi=100, bbox_inches='tight')
+        buf.seek(0)
+        img_base64 = base64.b64encode(buf.read()).decode('utf-8')
+        plt.close()
+
+        return img_base64
+    except Exception as e:
+        print(f"Error generating SAM segmentation: {e}")
+        import traceback
+        traceback.print_exc()
+        return None
+
+
 def load_annotations():
     """Load existing annotations or create new dict"""
     if ANNOTATIONS_FILE.exists():
@@ -203,11 +398,16 @@ def get_config():
     images = get_image_list()
     annotations = load_annotations()
     model_available = MODEL_PATH.exists()
+
+    # Check SAM availability
+    global sam_available
+
     return jsonify({
         'classes': CLASSES,
         'images': images,
         'total_images': len(images),
-        'model_available': model_available
+        'model_available': model_available,
+        'sam_available': sam_available
     })
 
 
@@ -232,6 +432,35 @@ def get_attention(image_name):
         return jsonify({'error': 'Failed to generate attention'}), 500
 
     return jsonify({'attention_image': attention_img})
+
+
+@app.route('/api/sam-segmentation/<image_name>')
+def get_sam_segmentation(image_name):
+    """Get SAM-based segmentation using attention + known classes"""
+    global loaded_model, sam_predictor
+
+    if loaded_model is None:
+        loaded_model = load_model()
+
+    if sam_predictor is None:
+        sam_predictor = load_sam_model()
+
+    if loaded_model is None:
+        return jsonify({'error': 'Model not available'}), 404
+
+    if sam_predictor is None:
+        return jsonify({'error': 'SAM not available'}), 404
+
+    image_path = INPUT_DIR / image_name
+    if not image_path.exists():
+        return jsonify({'error': 'Image not found'}), 404
+
+    sam_img = generate_sam_segmentation(image_path, loaded_model, image_name)
+
+    if sam_img is None:
+        return jsonify({'error': 'Failed to generate SAM segmentation'}), 500
+
+    return jsonify({'sam_image': sam_img})
 
 
 @app.route('/api/annotations')
@@ -619,6 +848,12 @@ def create_html_template():
                     <label for="showAttention">🔥 Show Attention Map</label>
                 </div>
 
+                <!-- SAM Segmentation toggle -->
+                <div class="attention-toggle" id="samToggleContainer" style="display: none;">
+                    <input type="checkbox" id="showSAM" onchange="toggleSAM()">
+                    <label for="showSAM">✂️ Show SAM Segmentation</label>
+                </div>
+
                 <div id="classControls"></div>
 
                 <div class="instructions">
@@ -660,6 +895,11 @@ def create_html_template():
                 // Show attention toggle if model is available
                 if (config.model_available) {
                     document.getElementById('attentionToggleContainer').style.display = 'flex';
+                }
+
+                // Show SAM toggle if SAM is available
+                if (config.sam_available) {
+                    document.getElementById('samToggleContainer').style.display = 'flex';
                 }
 
                 // Find first unannotated image or start at 0
@@ -734,10 +974,14 @@ def create_html_template():
             overlay.id = 'attentionOverlay';
             container.appendChild(overlay);
 
-            // Reset attention checkbox
+            // Reset attention and SAM checkboxes
             const attentionCheckbox = document.getElementById('showAttention');
+            const samCheckbox = document.getElementById('showSAM');
             if (attentionCheckbox) {
                 attentionCheckbox.checked = false;
+            }
+            if (samCheckbox) {
+                samCheckbox.checked = false;
             }
 
             // Load annotation
@@ -865,7 +1109,13 @@ def create_html_template():
 
         async function toggleAttention() {
             const checkbox = document.getElementById('showAttention');
+            const samCheckbox = document.getElementById('showSAM');
             const overlay = document.getElementById('attentionOverlay');
+
+            // Uncheck SAM if attention is being turned on
+            if (checkbox.checked && samCheckbox) {
+                samCheckbox.checked = false;
+            }
 
             if (checkbox.checked) {
                 // Show attention
@@ -888,6 +1138,43 @@ def create_html_template():
                 }
             } else {
                 // Hide attention
+                overlay.classList.remove('visible');
+            }
+        }
+
+        async function toggleSAM() {
+            const checkbox = document.getElementById('showSAM');
+            const attentionCheckbox = document.getElementById('showAttention');
+            const overlay = document.getElementById('attentionOverlay');
+
+            // Uncheck attention if SAM is being turned on
+            if (checkbox.checked && attentionCheckbox) {
+                attentionCheckbox.checked = false;
+            }
+
+            if (checkbox.checked) {
+                // Show SAM segmentation
+                overlay.classList.add('visible');
+                overlay.innerHTML = '<div class="loading-spinner"></div>';
+
+                try {
+                    const imageName = images[currentIndex];
+                    const res = await fetch(`/api/sam-segmentation/${imageName}`);
+                    const data = await res.json();
+
+                    if (data.sam_image) {
+                        overlay.innerHTML = `<img src="data:image/png;base64,${data.sam_image}" alt="SAM Segmentation">`;
+                    } else if (data.error) {
+                        overlay.innerHTML = `<div style="color: red;">${data.error}</div>`;
+                    } else {
+                        overlay.innerHTML = '<div style="color: red;">Failed to load SAM segmentation</div>';
+                    }
+                } catch (error) {
+                    console.error('Failed to load SAM:', error);
+                    overlay.innerHTML = '<div style="color: red;">Error loading SAM segmentation</div>';
+                }
+            } else {
+                // Hide SAM
                 overlay.classList.remove('visible');
             }
         }
