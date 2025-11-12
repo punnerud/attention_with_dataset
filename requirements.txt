@@ -1,0 +1,23 @@
+# Core ML/DL frameworks
+torch>=2.0.0
+torchvision>=0.15.0
+
+# Image processing
+Pillow>=9.0.0
+opencv-python>=4.7.0
+
+# Data processing
+numpy>=1.24.0
+
+# Visualization
+matplotlib>=3.7.0
+
+# Progress bars
+tqdm>=4.65.0
+
+# Web-based annotation GUI
+Flask>=2.3.0
+
+# Optional: For better performance on Apple Silicon
+# Uncomment if on Mac with M1/M2/M3
+# --extra-index-url https://download.pytorch.org/whl/cpu
